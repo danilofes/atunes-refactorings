@@ -99,12 +99,17 @@ public final class PatternMatcher {
 	private List<String> getNonPatternSequences(String patternsString) {
 		String[] nonPatternSequencesArray = patternsString.split(StringUtils.getString(AbstractPattern.PATTERN_NAME_FIRST_CHAR, '.'));
 		List<String> nonPatternSequences = new ArrayList<String>();
+		extractedMethod(nonPatternSequencesArray, nonPatternSequences);
+		return nonPatternSequences;
+	}
+
+	private void extractedMethod(String[] nonPatternSequencesArray,
+			List<String> nonPatternSequences) {
 		for (String nonPatternSequence : nonPatternSequencesArray) {
 			if (!nonPatternSequence.isEmpty()) {
 				nonPatternSequences.add(nonPatternSequence);
 			}
 		}
-		return nonPatternSequences;
 	}
 
 	/**

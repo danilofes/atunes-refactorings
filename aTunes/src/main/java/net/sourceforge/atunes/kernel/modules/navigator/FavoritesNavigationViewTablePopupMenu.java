@@ -98,18 +98,7 @@ public class FavoritesNavigationViewTablePopupMenu extends JPopupMenu {
 		add(new EditTagMenu(false, this.favoritesNavigationView,
 				this.beanFactory));
 
-		ExtractPictureAction extractPictureAction = this.beanFactory.getBean(
-				"extractPictureFromFavoritesNavigationView",
-				ExtractPictureAction.class);
-		extractPictureAction
-				.setAudioObjectsSource(this.favoritesNavigationView);
-		add(extractPictureAction);
-
-		add(new JSeparator());
-		add(this.beanFactory.getBean(RemoveFromDiskAction.class));
-		add(this.beanFactory
-				.getBean(RenameAudioFileInNavigationTableAction.class));
-		add(new JSeparator());
+		extractedMethod();
 
 		AbstractActionOverSelectedObjects<IAudioObject> exportAction = this.beanFactory
 				.getBean("exportNavigatorSelectionFromFavoritesViewAction",
@@ -125,6 +114,21 @@ public class FavoritesNavigationViewTablePopupMenu extends JPopupMenu {
 
 		add(new JSeparator());
 		add(this.beanFactory.getBean(RemoveFromFavoritesAction.class));
+	}
+
+	private void extractedMethod() {
+		ExtractPictureAction extractPictureAction = this.beanFactory.getBean(
+				"extractPictureFromFavoritesNavigationView",
+				ExtractPictureAction.class);
+		extractPictureAction
+				.setAudioObjectsSource(this.favoritesNavigationView);
+		add(extractPictureAction);
+
+		add(new JSeparator());
+		add(this.beanFactory.getBean(RemoveFromDiskAction.class));
+		add(this.beanFactory
+				.getBean(RenameAudioFileInNavigationTableAction.class));
+		add(new JSeparator());
 	}
 
 	/**

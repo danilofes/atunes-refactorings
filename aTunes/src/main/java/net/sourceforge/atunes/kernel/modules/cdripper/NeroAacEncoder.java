@@ -97,16 +97,7 @@ public class NeroAacEncoder extends AbstractEncoder {
 		wavFile.getName(), " -> ", mp4File.getName()));
 	BufferedReader stdInput = null;
 	try {
-	    List<String> command = new ArrayList<String>();
-	    command.add(StringUtils.getString(getOsManager()
-		    .getExternalToolsPath(), NERO_AAC));
-	    command.add(QUALITY);
-	    command.add(getQuality());
-	    // command.add(IGNORE_LENGTH);
-	    command.add(INPUT);
-	    command.add(FileUtils.getPath(wavFile));
-	    command.add(OUTPUT);
-	    command.add(FileUtils.getPath(mp4File));
+	    List<String> command = extractedMethod(wavFile, mp4File);
 	    process = new ProcessBuilder(command).start();
 	    stdInput = new BufferedReader(new InputStreamReader(
 		    process.getErrorStream()));
@@ -145,6 +136,20 @@ public class NeroAacEncoder extends AbstractEncoder {
 	    ClosingUtils.close(stdInput);
 	}
     }
+
+	private List<String> extractedMethod(final File wavFile, final File mp4File) {
+		List<String> command = new ArrayList<String>();
+	    command.add(StringUtils.getString(getOsManager()
+		    .getExternalToolsPath(), NERO_AAC));
+	    command.add(QUALITY);
+	    command.add(getQuality());
+	    // command.add(IGNORE_LENGTH);
+	    command.add(INPUT);
+	    command.add(FileUtils.getPath(wavFile));
+	    command.add(OUTPUT);
+	    command.add(FileUtils.getPath(mp4File));
+		return command;
+	}
 
     @Override
     public void stop() {

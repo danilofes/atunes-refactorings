@@ -151,6 +151,22 @@ final class OSDDialogController extends AbstractSimpleController<OSDDialog> {
 					this.lookAndFeelManager.getCurrentLookAndFeel()
 							.getPaintForSpecialControls());
 		}
+		extractedMethod(audioObject, location, i);
+
+		this.windowFader.fadeIn();
+		this.timer = new Timer(this.stateUI.getOsdDuration() * 1000,
+				new ActionListener() {
+					@Override
+					public void actionPerformed(final ActionEvent e) {
+						OSDDialogController.this.windowFader.fadeOut();
+					}
+				});
+		this.timer.setRepeats(false);
+		this.timer.start();
+	}
+
+	private void extractedMethod(final IAudioObject audioObject,
+			Point location, ImageIcon i) {
 		getComponentControlled().setImage(i);
 		getComponentControlled().setLine1(audioObject.getTitleOrFileName());
 		getComponentControlled().setLine2(
@@ -165,16 +181,5 @@ final class OSDDialogController extends AbstractSimpleController<OSDDialog> {
 		getComponentControlled().setVisible(true);
 		// see bug 1864517
 		getComponentControlled().repaint();
-
-		this.windowFader.fadeIn();
-		this.timer = new Timer(this.stateUI.getOsdDuration() * 1000,
-				new ActionListener() {
-					@Override
-					public void actionPerformed(final ActionEvent e) {
-						OSDDialogController.this.windowFader.fadeOut();
-					}
-				});
-		this.timer.setRepeats(false);
-		this.timer.start();
 	}
 }
