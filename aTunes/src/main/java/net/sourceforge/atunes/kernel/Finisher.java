@@ -78,22 +78,46 @@ public final class Finisher {
 	}
 
 	final void finish() {
-		finish(false);
-	}
-
-	final void restart() {
-		finish(true);
-	}
-
-	private final void finish(final boolean restart) {
 		try {
-			Logger.info(StringUtils.getString(restart ? "Restarting "
+			Logger.info(StringUtils.getString(false ? "Restarting "
 					: "Closing ", Constants.APP_NAME, " ", Constants.VERSION
 					.toString()));
 			// Store all configuration and finish all active modules
 			this.applicationLifeCycleListeners.applicationFinish();
+		
+			if (false) {
+				Runtime.getRuntime().addShutdownHook(new Thread() {
+					@Override
+					public void run() {
+						String command = getRestartCommand();
+						Logger.info("Restart command: ", command);
+						// Start new application instance
+						try {
+							Runtime.getRuntime().exec(command);
+						} catch (IOException e) {
+							Logger.error(e);
+						}
+					}
+				});
+			}
+		} catch (Throwable t) {
+			Logger.error(t);
+		} finally {
+			Logger.info("Application finished");
+			// Exit normally
+			System.exit(0);
+		}
+	}
 
-			if (restart) {
+	final void restart() {
+		try {
+			Logger.info(StringUtils.getString(true ? "Restarting "
+					: "Closing ", Constants.APP_NAME, " ", Constants.VERSION
+					.toString()));
+			// Store all configuration and finish all active modules
+			this.applicationLifeCycleListeners.applicationFinish();
+		
+			if (true) {
 				Runtime.getRuntime().addShutdownHook(new Thread() {
 					@Override
 					public void run() {

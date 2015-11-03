@@ -86,10 +86,6 @@ public final class RadioHandler extends AbstractHandler implements
 		}
 		Collections.sort(getRadios(), new RadioComparator());
 		getBean(INavigationHandler.class).refreshView(this.radioNavigationView);
-		persistRadios();
-	}
-
-	private void persistRadios() {
 		getBean(IStateService.class).persistRadioCache(getRadios());
 	}
 
@@ -123,7 +119,7 @@ public final class RadioHandler extends AbstractHandler implements
 			getRadios().remove(radio);
 		}
 		getBean(INavigationHandler.class).refreshView(this.radioNavigationView);
-		persistRadios();
+		getBean(IStateService.class).persistRadioCache(getRadios());
 	}
 
 	@Override
@@ -136,7 +132,7 @@ public final class RadioHandler extends AbstractHandler implements
 		for (IRadio r : radioList) {
 			r.setLabel(label);
 		}
-		persistRadios();
+		getBean(IStateService.class).persistRadioCache(getRadios());
 	}
 
 	@Override

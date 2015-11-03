@@ -116,7 +116,11 @@ public class InternalImportProcessor {
 
 			// DRAG AND DROP OF AN ARTIST -> add songs from this artist
 			else if (object instanceof DragableArtist) {
-				return getArtistSongs((List<DragableArtist>) listOfObjectsDragged);
+				DragableArtist dragabreArtist = ((List<DragableArtist>) listOfObjectsDragged).get(0);
+				IArtist currentArtist = repositoryHandler.getArtist(dragabreArtist
+						.getArtistInfo().getName());
+				showAddArtistDragDialog(currentArtist);
+				return true;
 			}
 
 			// DRAG AND DROP FROM NAVIGATOR TREE
@@ -157,15 +161,6 @@ public class InternalImportProcessor {
 			Logger.error(e);
 		}
 		return null;
-	}
-
-	private boolean getArtistSongs(
-			final List<DragableArtist> listOfObjectsDragged) {
-		DragableArtist dragabreArtist = listOfObjectsDragged.get(0);
-		IArtist currentArtist = repositoryHandler.getArtist(dragabreArtist
-				.getArtistInfo().getName());
-		showAddArtistDragDialog(currentArtist);
-		return true;
 	}
 
 	private void showAddArtistDragDialog(final IArtist currentArtist) {

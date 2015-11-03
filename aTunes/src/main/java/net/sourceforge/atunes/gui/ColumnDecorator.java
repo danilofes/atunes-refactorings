@@ -75,9 +75,9 @@ public class ColumnDecorator {
 		addRenderers(this.table.getSwingComponent(), this.columnModel,
 				this.lookAndFeelManager.getCurrentLookAndFeel());
 		if (decorateHeader) {
-			addHeaderRenderers(this.table.getSwingComponent(),
-					this.columnModel,
-					this.lookAndFeelManager.getCurrentLookAndFeel());
+			// Set header renderer
+			this.table.getSwingComponent().getTableHeader().setDefaultRenderer(
+					this.lookAndFeelManager.getCurrentLookAndFeel().getTableHeaderCellRenderer(this.columnModel));
 		}
 	}
 
@@ -124,18 +124,5 @@ public class ColumnDecorator {
 		jtable.setDefaultRenderer(PlaybackState.class, lookAndFeel
 				.getTableCellRenderer(model
 						.getRendererCodeFor(PlaybackState.class)));
-	}
-
-	/**
-	 * @param jtable
-	 * @param model
-	 * @param lookAndFeel
-	 */
-	private void addHeaderRenderers(final JTable jtable,
-			final AbstractCommonColumnModel model,
-			final ILookAndFeel lookAndFeel) {
-		// Set header renderer
-		jtable.getTableHeader().setDefaultRenderer(
-				lookAndFeel.getTableHeaderCellRenderer(model));
 	}
 }

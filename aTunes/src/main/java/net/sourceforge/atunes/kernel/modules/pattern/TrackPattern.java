@@ -33,20 +33,13 @@ public final class TrackPattern extends AbstractPattern {
 	
 	@Override
 	public String getAudioFileStringValue(ILocalAudioObject audioFile) {
-		return formatTrackNumber(audioFile.getTrackNumber());
+		String track = String.valueOf(audioFile.getTrackNumber());
+		return track.length() < 2 ? StringUtils.getString("0", track) : track;
 	}
 	
 	@Override
 	public String getCDMetadataStringValue(CDMetadata metadata, int trackNumber) {
-	    return formatTrackNumber(trackNumber);
-	}
-
-	/**
-	 * @param trackNumber
-	 * @return
-	 */
-	private String formatTrackNumber(int trackNumber) {
-		String track = String.valueOf(trackNumber);
-	    return track.length() < 2 ? StringUtils.getString("0", track) : track;
+	    String track = String.valueOf(trackNumber);
+		return track.length() < 2 ? StringUtils.getString("0", track) : track;
 	}
 }
