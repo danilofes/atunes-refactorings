@@ -1,0 +1,11 @@
+Refactoring,Class,LOC,NOM,RFC,CBO,DIT,MPC,LCOM5,LCOM2,NOC,CYCLO,DAC
+MF-1,net.sourceforge.atunes.kernel.modules.cdripper.NeroAacEncoder,104.0,6.0,33.0,12.0,--,29.0,0.9555555555555555,0.7962962962962963,--,22.0,9.0,
+MF-1,net.sourceforge.atunes.kernel.modules.cdripper.CdRipper,124.0,17.0,43.0,15.0,--,26.0,0.8359375,0.7867647058823529,--,31.0,8.0,
+MF-2,net.sourceforge.atunes.kernel.modules.fullscreen.Cover,64.0,9.0,31.0,10.0,--,24.0,0.9444444444444444,0.8395061728395061,--,12.0,9.0,
+MF-2,net.sourceforge.atunes.kernel.modules.fullscreen.CoverFlow,84.0,12.0,34.0,12.0,--,22.0,0.9090909090909091,0.8333333333333334,--,17.0,6.0,
+MF-3,net.sourceforge.atunes.kernel.modules.podcast.PodcastFeed,155.0,28.0,41.0,9.0,--,15.0,0.9037037037037037,0.8714285714285714,--,38.0,10.0,
+MF-3,net.sourceforge.atunes.kernel.modules.podcast.PodcastFeedEntry,200.0,41.0,47.0,13.0,--,9.0,0.9645833333333333,0.9410569105691057,--,45.0,12.0,
+MF-4,net.sourceforge.atunes.kernel.modules.search.AlbumArtistSearchField,35.0,8.0,13.0,6.0,--,5.0,0.8571428571428571,0.75,--,8.0,3.0,
+MF-4,net.sourceforge.atunes.kernel.modules.search.AlbumSearchField,36.0,8.0,15.0,8.0,--,9.0,0.8571428571428571,0.75,--,8.0,2.0,
+MF-5,net.sourceforge.atunes.kernel.modules.updates.VersionXmlParser,50.0,6.0,18.0,6.0,--,12.0,0.8,0.6666666666666667,--,14.0,2.0,
+MF-5,net.sourceforge.atunes.kernel.modules.updates.UpdateHandler,97.0,13.0,38.0,11.0,--,27.0,0.9027777777777778,0.8333333333333334,--,21.0,6.0,

@@ -1,0 +1,11 @@
+Refactoring,Class,LOC,NOM,RFC,CBO,DIT,MPC,LCOM5,LCOM2,NOC,CYCLO,DAC
+MM-1,net.sourceforge.atunes.kernel.modules.favorites.FavoritesObjectDataStore,49.0,8.0,17.0,6.0,--,11.0,0.7857142857142857,0.6875,--,11.0,--,
+MM-1,net.sourceforge.atunes.kernel.modules.favorites.FavoritesSongsManager,80.0,8.0,27.0,13.0,--,19.0,0.8214285714285714,0.71875,--,23.0,--,
+MM-2,net.sourceforge.atunes.kernel.modules.player.mplayer.MPlayerCommandWriter,70.0,14.0,20.0,9.0,--,6.0,0.8717948717948718,0.8095238095238095,--,21.0,--,
+MM-2,net.sourceforge.atunes.kernel.modules.player.mplayer.MPlayerEngine,193.0,27.0,74.0,19.0,--,47.0,0.8782051282051282,0.845679012345679,--,47.0,--,
+MM-3,net.sourceforge.atunes.kernel.modules.playlist.PlaybackHistory,86.0,7.0,31.0,6.0,--,24.0,0.27777777777777785,0.23809523809523814,--,14.0,--,
+MM-3,net.sourceforge.atunes.kernel.modules.playlist.PlaybackHistory.Heap,50.0,7.0,24.0,7.0,--,17.0,0.16666666666666666,0.1428571428571429,--,18.0,--,
+MM-4,net.sourceforge.atunes.utils.XStreamFactory,38.0,4.0,17.0,10.0,--,12.0,0.7777777777777777,0.5833333333333333,--,11.0,--,
+MM-4,net.sourceforge.atunes.utils.XMLSerializerService,35.0,5.0,11.0,6.0,--,7.0,0.75,0.6,--,6.0,--,
+MM-5,net.sourceforge.atunes.utils.DateUtils,76.0,6.0,35.0,12.0,--,29.0,1.0,0.8333333333333334,--,25.0,--,
+MM-5,net.sourceforge.atunes.utils.CryptoUtils,20.0,2.0,13.0,10.0,--,11.0,1.0,0.5,--,4.0,--,

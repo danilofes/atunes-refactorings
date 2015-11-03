@@ -1,0 +1,11 @@
+Refactoring,Class,LOC,NOM,RFC,CBO,DIT,MPC,LCOM5,LCOM2,NOC,CYCLO,DAC
+EC-1,net.sourceforge.atunes.gui.ExtractColumnDecorator,31.0,2.0,8.0,6.0,--,6.0,0.0,0.0,--,2.0,--,
+EC-1,net.sourceforge.atunes.gui.ColumnDecorator,25.0,4.0,6.0,7.0,--,2.0,0.8333333333333334,0.625,--,5.0,1.0,
+EC-2,net.sourceforge.atunes.gui.ExtractDimensionBuilder,34.0,5.0,17.0,8.0,--,12.0,-1.0,-0.6666666666666667,--,12.0,1.0,
+EC-2,net.sourceforge.atunes.gui.DimensionBuilder,49.0,10.0,8.0,4.0,--,4.0,1.2222222222222223,1.1,--,8.0,1.0,
+EC-3,net.sourceforge.atunes.gui.frame.ExtractWindowLocationCalculator,12.0,3.0,3.0,2.0,--,0.0,-0.0,0.0,--,3.0,1.0,
+EC-3,net.sourceforge.atunes.gui.frame.WindowLocationCalculator,20.0,3.0,7.0,5.0,--,6.0,0.75,0.5,--,5.0,2.0,
+EC-4,net.sourceforge.atunes.utils.Timer,12.0,3.0,4.0,3.0,--,3.0,1.0,0.6666666666666667,--,3.0,1.0,
+EC-4,net.sourceforge.atunes.utils.ExtractTimer,12.0,3.0,4.0,1.0,--,1.0,-0.0,0.0,--,3.0,1.0,
+EC-5,net.sourceforge.atunes.gui.javafx.JavaFXDialog,105.0,17.0,42.0,13.0,--,27.0,0.90625,0.8529411764705882,--,21.0,8.0,
+EC-5,net.sourceforge.atunes.gui.javafx.ExtractJavaFXDialog,23.0,3.0,8.0,8.0,--,5.0,-0.0,0.0,--,3.0,1.0,

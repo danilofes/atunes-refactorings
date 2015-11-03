@@ -1,0 +1,11 @@
+Refactoring,Class,LOC,NOM,RFC,CBO,DIT,MPC,LCOM5,LCOM2,NOC,CYCLO,DAC
+RMMO-1,net.sourceforge.atunes.gui.autocomplete.ObjectMethodClass,59.0,2.0,29.0,22.0,--,28.0,0.3870967741935484,0.1935483870967742,0.0,8.0,31.0,
+RMMO-1,net.sourceforge.atunes.gui.autocomplete.AutoCompleteDecorator,164.0,8.0,22.0,9.0,--,20.0,1.1428571428571428,1.0,0.0,2.0,1.0,
+RMMO-2,net.sourceforge.atunes.gui.images.ObjectMethodClass,19.0,2.0,5.0,4.0,--,4.0,0.3333333333333333,0.16666666666666666,0.0,5.0,3.0,
+RMMO-2,net.sourceforge.atunes.gui.images.Images,26.0,2.0,4.0,0.0,--,2.0,2.0,1.0,0.0,2.0,19.0,
+RMMO-3,net.sourceforge.atunes.gui.ColumnRenderers,7.0,2.0,4.0,0.0,--,2.0,0.0,0.0,0.0,2.0,0.0,
+RMMO-3,net.sourceforge.atunes.gui.NewClass,38.0,2.0,7.0,3.0,--,6.0,0.25,0.125,0.0,2.0,4.0,
+RMMO-4,net.sourceforge.atunes.gui.GuiUtils,203.0,22.0,60.0,21.0,--,39.0,0.9931972789115646,0.948051948051948,0.0,59.0,7.0,
+RMMO-4,net.sourceforge.atunes.gui.HeisenbergClass,27.0,2.0,6.0,8.0,--,5.0,0.5,0.25,0.0,2.0,6.0,
+RMMO-5,net.sourceforge.atunes.gui.LastClass,24.0,2.0,9.0,2.0,--,8.0,0.0,0.0,0.0,7.0,1.0,
+RMMO-5,net.sourceforge.atunes.gui.DimensionBuilder,53.0,11.0,11.0,3.0,--,4.0,0.9,0.8181818181818181,0.0,11.0,1.0,

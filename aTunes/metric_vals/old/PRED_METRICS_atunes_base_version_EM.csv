@@ -1,0 +1,6 @@
+Refactoring,Class,LOC,NOM,RFC,CBO,DIT,MPC,LCOM5,LCOM2,NOC,CYCLO,DAC
+EM-1,net.sourceforge.atunes.kernel.modules.cdripper.FlacEncoder,100.0,5.0,38.0,--,--,--,0.9375,0.75,--,22.0,--,
+EM-2,net.sourceforge.atunes.kernel.modules.pattern.PatternMatcher,100.0,12.0,43.0,--,--,--,0.7272727272727273,0.6666666666666667,--,32.0,--,
+EM-3,net.sourceforge.atunes.kernel.modules.notify.OSDDialogController,100.0,5.0,45.0,--,--,--,0.7142857142857143,0.5714285714285714,--,16.0,--,
+EM-4,net.sourceforge.atunes.kernel.modules.navigator.FavoritesNavigationViewTablePopupMenu,70.0,4.0,16.0,--,--,--,0.888888888888889,0.6666666666666667,--,4.0,--,
+EM-5,net.sourceforge.atunes.kernel.actions.LoadPlayListAction,69.0,9.0,34.0,--,--,--,0.9166666666666666,0.8148148148148149,--,15.0,--,

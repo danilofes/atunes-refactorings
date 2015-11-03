@@ -1,0 +1,11 @@
+Refactoring,Class,LOC,NOM,RFC,CBO,DIT,MPC,LCOM5,LCOM2,NOC,CYCLO,DAC
+PUM-1,net.sourceforge.atunes.gui.lookandfeel.substance.AbstractButtonShaper,50.0,4.0,16.0,13.0,--,12.0,0.0,0.0,--,7.0,--,
+PUM-1,net.sourceforge.atunes.gui.lookandfeel.substance.RoundRectButtonShaper,6.0,1.0,1.0,1.0,--,0.0,0.0,0.0,--,1.0,--,
+PUM-2,net.sourceforge.atunes.gui.frame.CommonSingleFrame,134.0,23.0,61.0,12.0,--,38.0,0.9545454545454546,0.9130434782608696,--,27.0,--,
+PUM-2,net.sourceforge.atunes.gui.frame.AbstractSingleFrame,458.0,65.0,157.0,36.0,--,92.0,0.9782608695652174,0.9632107023411371,--,97.0,--,
+PUM-3,net.sourceforge.atunes.gui.frame.MainSplitPaneRightSingleFrame,28.0,6.0,13.0,4.0,--,7.0,1.2,1.0,--,6.0,--,
+PUM-3,net.sourceforge.atunes.gui.frame.NavigatorTopPlayListBottomSingleFrame,96.0,16.0,36.0,12.0,--,20.0,0.8444444444444444,0.7916666666666666,--,16.0,--,
+PUM-4,net.sourceforge.atunes.gui.AlbumTableColumnModel,18.0,4.0,6.0,3.0,--,2.0,1.0,0.75,--,4.0,--,
+PUM-4,net.sourceforge.atunes.gui.AbstractCommonColumnModel,176.0,31.0,66.0,19.0,--,32.0,0.9600000000000001,0.9290322580645162,--,59.0,--,
+PUM-5,net.sourceforge.atunes.gui.views.dialogs.ExtendedToolTip,69.0,5.0,27.0,13.0,--,22.0,0.8333333333333333,0.6666666666666667,--,7.0,--,
+PUM-5,net.sourceforge.atunes.gui.views.controls.AbstractCustomWindow,26.0,5.0,15.0,5.0,--,8.0,1.0,0.8,--,6.0,--,

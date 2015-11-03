@@ -1,0 +1,9 @@
+Refactoring,Class,LOC,NOM,RFC,CBO,DIT,MPC,LCOM5,LCOM2,NOC,CYCLO,DAC
+RID-1,net.sourceforge.atunes.gui.views.dialogs.ProgressDialog,115.0,--,--,--,2.0,--,0.8571428571428571,0.8,0.0,--,7.0,
+RID-1,net.sourceforge.atunes.gui.views.dialogs.TransferProgressDialog,16.0,--,--,--,2.0,--,1.0,0.6666666666666667,0.0,--,2.0,
+RID-2,net.sourceforge.atunes.kernel.actions.AddArtistTopTracksToPlayListAction,119.0,--,--,--,2.0,--,0.96,0.8727272727272728,0.0,--,10.0,
+RID-2,net.sourceforge.atunes.kernel.actions.AbstractActionOverSelectedTreeObjects,52.0,--,--,--,2.0,--,0.9047619047619048,0.7916666666666666,5.0,--,3.0,
+RID-3,javax.swing.JMenu,0.0,--,--,--,0.0,--,0.0,0.0,-1.0,--,0.0,
+RID-3,net.sourceforge.atunes.gui.views.menus.PlayerMenu,33.0,--,--,--,0.0,--,0.9285714285714285,0.7959183673469388,0.0,--,7.0,
+RID-4,javax.swing.JMenu,0.0,--,--,--,0.0,--,0.0,0.0,-1.0,--,0.0,
+RID-4,net.sourceforge.atunes.gui.views.menus.FileMenu,37.0,--,--,--,0.0,--,0.9285714285714285,0.7959183673469388,0.0,--,7.0,
