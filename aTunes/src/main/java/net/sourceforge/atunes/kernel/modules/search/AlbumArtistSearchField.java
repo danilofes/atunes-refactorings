@@ -24,8 +24,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import net.sourceforge.atunes.model.IAlbum;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IRepositoryHandler;
+import net.sourceforge.atunes.model.ISearchUnaryOperator;
 import net.sourceforge.atunes.model.IUnknownObjectChecker;
 import net.sourceforge.atunes.utils.I18nUtils;
 
@@ -40,6 +42,17 @@ public class AlbumArtistSearchField extends StringSearchField<IAudioObject> {
 	private IRepositoryHandler repositoryHandler;
 
 	private IUnknownObjectChecker unknownObjectChecker;
+
+	private ISearchUnaryOperator<IAlbum> albumFavoriteSearchOperator;
+
+	public ISearchUnaryOperator<IAlbum> getAlbumFavoriteSearchOperator() {
+		return albumFavoriteSearchOperator;
+	}
+
+	public void setAlbumFavoriteSearchOperator(
+			ISearchUnaryOperator<IAlbum> albumFavoriteSearchOperator) {
+		this.albumFavoriteSearchOperator = albumFavoriteSearchOperator;
+	}
 
 	/**
 	 * @param unknownObjectChecker

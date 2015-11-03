@@ -49,6 +49,16 @@ public class PodcastFeed implements IPodcastFeed {
 
   final String DEFAULT_EMPTY_NAME = "";
 
+private boolean old;
+
+	public boolean isOld() {
+	return old;
+}
+
+public void setOld(boolean old) {
+	this.old = old;
+}
+
 	/** No arg constructor for serialization */
 	PodcastFeed() {
 	}

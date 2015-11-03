@@ -58,13 +58,12 @@ public final class UpdateHandler extends AbstractHandler implements
 
 	private String versionFile;
 
-	private String versionProperty;
-
+	private VersionXmlParser vp = new VersionXmlParser();
 	/**
 	 * @param versionProperty
 	 */
 	public void setVersionProperty(final String versionProperty) {
-		this.versionProperty = versionProperty;
+		vp.setVersionProperty(versionProperty);
 	}
 
 	/**
@@ -119,7 +118,7 @@ public final class UpdateHandler extends AbstractHandler implements
 	private void checkIfVersionChanged() {
 		Properties versionProperties = PropertiesUtils
 				.readProperties(getVersionFilePath());
-		String oldVersion = versionProperties.getProperty(this.versionProperty);
+		String oldVersion = versionProperties.getProperty(this.getVersionProperty());
 		oldVersion = oldVersion != null ? oldVersion : "";
 		String newVersion = Constants.VERSION.toString();
 		if (!newVersion.equals(oldVersion)) {
@@ -127,7 +126,7 @@ public final class UpdateHandler extends AbstractHandler implements
 					.getBeans(IApplicationUpdatedListener.class)) {
 				listener.versionChanged(oldVersion, newVersion);
 			}
-			versionProperties.put(this.versionProperty, newVersion);
+			versionProperties.put(this.getVersionProperty(), newVersion);
 			try {
 				PropertiesUtils.writeProperties(getVersionFilePath(),
 						versionProperties);
@@ -198,5 +197,9 @@ public final class UpdateHandler extends AbstractHandler implements
 	private Document getVersionXml() throws IOException {
 		return XMLUtils.getXMLDocument(this.networkHandler
 				.readURL(this.networkHandler.getConnection(this.updatesURL)));
+	}
+
+	private String getVersionProperty() {
+		return vp.getVersionProperty();
 	}
 }

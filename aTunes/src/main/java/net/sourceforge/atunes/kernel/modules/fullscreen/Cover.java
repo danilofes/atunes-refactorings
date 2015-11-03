@@ -48,16 +48,15 @@ public class Cover extends JPanel {
     
     private String previousArtist;
     private String previousAlbum;
+    public CoverFlow cf = new CoverFlow();
     
-    private int imageSize;
-
     /**
      * Instantiates a cover.
      * @param imageSize
      */
     public Cover(int imageSize) {
         super(false);
-        this.imageSize = imageSize;
+        this.setImageSize(imageSize);
         setOpaque(false);
     }
 
@@ -136,6 +135,10 @@ public class Cover extends JPanel {
      * @return
      */
     public int getImageSize() {
-		return imageSize;
+		return cf.getImageSize();
+	}
+
+	private void setImageSize(int imageSize) {
+		cf.setImageSize(imageSize);
 	}
 }

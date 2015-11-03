@@ -40,14 +40,14 @@ public class AlbumSearchField extends StringSearchField<IAlbum> {
 
 	private IRepositoryHandler repositoryHandler;
 
-	private ISearchUnaryOperator<IAlbum> albumFavoriteSearchOperator;
-
+	private AlbumArtistSearchField af = new AlbumArtistSearchField();
+	
 	/**
 	 * @param albumFavoriteSearchOperator
 	 */
 	public void setAlbumFavoriteSearchOperator(
 			ISearchUnaryOperator<IAlbum> albumFavoriteSearchOperator) {
-		this.albumFavoriteSearchOperator = albumFavoriteSearchOperator;
+		af.setAlbumFavoriteSearchOperator(albumFavoriteSearchOperator);
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class AlbumSearchField extends StringSearchField<IAlbum> {
 	@Override
 	public List<ISearchOperator> getOperators() {
 		List<ISearchOperator> operators = super.getOperators();
-		operators.add(albumFavoriteSearchOperator);
+		operators.add(getAlbumFavoriteSearchOperator());
 		return operators;
 	}
 
@@ -82,5 +82,9 @@ public class AlbumSearchField extends StringSearchField<IAlbum> {
 	@Override
 	public String getValueForEvaluation(IAlbum album) {
 		return album.getName();
+	}
+
+	private ISearchUnaryOperator<IAlbum> getAlbumFavoriteSearchOperator() {
+		return af.getAlbumFavoriteSearchOperator();
 	}
 }

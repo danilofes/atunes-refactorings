@@ -51,8 +51,8 @@ public class NeroAacEncoder extends AbstractEncoder {
 	    "0.6", "0.7", "0.8", "0.9", "1.0" };
     private static final String DEFAULT_NERO_AAC_QUALITY = "0.4";
 
-    private Process process;
-
+    private CdRipper cd = new CdRipper();
+    
     @Override
     public boolean testEncoder() {
 	// Test for Nero Aac encoder
@@ -107,9 +107,9 @@ public class NeroAacEncoder extends AbstractEncoder {
 	    command.add(FileUtils.getPath(wavFile));
 	    command.add(OUTPUT);
 	    command.add(FileUtils.getPath(mp4File));
-	    process = new ProcessBuilder(command).start();
+	    setProcess(new ProcessBuilder(command).start());
 	    stdInput = new BufferedReader(new InputStreamReader(
-		    process.getErrorStream()));
+		    getProcess().getErrorStream()));
 
 	    // Required to avoid deadlook under Windows
 	    String line = null;
@@ -125,7 +125,7 @@ public class NeroAacEncoder extends AbstractEncoder {
 		    });
 		}
 	    }
-	    int code = process.waitFor();
+	    int code = getProcess().waitFor();
 	    if (code != 0) {
 		Logger.error(StringUtils.getString("Process returned code ",
 			code));
@@ -148,8 +148,16 @@ public class NeroAacEncoder extends AbstractEncoder {
 
     @Override
     public void stop() {
-	if (process != null) {
-	    process.destroy();
+	if (getProcess() != null) {
+	    getProcess().destroy();
 	}
     }
+
+	private Process getProcess() {
+		return cd.getProcess();
+	}
+
+	private void setProcess(Process process) {
+		cd.setProcess(process);
+	}
 }

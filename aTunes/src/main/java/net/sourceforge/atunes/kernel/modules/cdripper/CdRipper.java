@@ -49,6 +49,15 @@ public class CdRipper {
 	private CdRipperFileNameCreator cdRipperFileNameCreator;
 
 	private CDMetadata cdMetadata;
+	private Process process;
+
+	public Process getProcess() {
+		return process;
+	}
+
+	public void setProcess(Process process) {
+		this.process = process;
+	}
 
 	/**
 	 * @param cdMetadata

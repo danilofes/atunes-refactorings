@@ -38,6 +38,15 @@ import org.w3c.dom.Element;
 public class VersionXmlParser {
 
 	private IOSManager osManager;
+	private String versionProperty;
+
+	public String getVersionProperty() {
+		return versionProperty;
+	}
+
+	public void setVersionProperty(String versionProperty) {
+		this.versionProperty = versionProperty;
+	}
 
 	/**
 	 * @param osManager

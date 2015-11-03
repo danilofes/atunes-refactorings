@@ -48,8 +48,8 @@ public final class PodcastFeedEntry implements IPodcastFeedEntry {
 	IPodcastFeed podcastFeed;
 	boolean listened;
 	boolean downloaded;
-	boolean old;
-
+	private PodcastFeed pf = new PodcastFeed();
+	
 	/**
 	 * No arg constructor for serialization
 	 */
@@ -184,7 +184,7 @@ public final class PodcastFeedEntry implements IPodcastFeedEntry {
 
 	@Override
 	public void setOld(final boolean old) {
-		this.old = old;
+		pf.setOld(old);
 	}
 
 	@Override
@@ -268,7 +268,7 @@ public final class PodcastFeedEntry implements IPodcastFeedEntry {
 	 */
 	@Override
 	public boolean isOld() {
-		return this.old;
+		return pf.isOld();
 	}
 
 	/*

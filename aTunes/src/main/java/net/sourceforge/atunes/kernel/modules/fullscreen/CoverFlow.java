@@ -51,6 +51,16 @@ public final class CoverFlow extends JPanel implements ApplicationContextAware {
 
 	private IUnknownObjectChecker unknownObjectChecker;
 
+	private int imageSize;
+
+	public int getImageSize() {
+		return imageSize;
+	}
+
+	public void setImageSize(int imageSize) {
+		this.imageSize = imageSize;
+	}
+
 	/**
 	 * @param unknownObjectChecker
 	 */
