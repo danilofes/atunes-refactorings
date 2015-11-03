@@ -22,7 +22,6 @@ package net.sourceforge.atunes.utils;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.GeneralSecurityException;
@@ -30,7 +29,6 @@ import java.security.Key;
 
 import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
-import javax.crypto.CipherOutputStream;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
@@ -44,9 +42,9 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public final class CryptoUtils {
 
-    private static final String DES = "DES";
+    static final String DES = "DES";
 	/* Length: 8 Bytes for DES */
-    private static final String SECRET_KEY = "5Gjd9T0b";
+    static final String SECRET_KEY = "5Gjd9T0b";
 
     private CryptoUtils() {
     }
@@ -79,35 +77,6 @@ public final class CryptoUtils {
         String string = reader.readLine();
         reader.close();
         return string != null ? string.getBytes() : new byte[0];
-    }
-
-    /**
-     * Encrypts a byte array.
-     * 
-     * @param bytes
-     *            The byte array to encrypt
-     * 
-     * @return The encrypted byte array
-     * 
-     * @throws GeneralSecurityException
-     *             the general security exception
-     * @throws IOException
-     *             Signals that an I/O exception has occurred.
-     */
-    public static byte[] encrypt(byte[] bytes) throws GeneralSecurityException, IOException {
-        if (bytes == null || bytes.length == 0) {
-            return new byte[0];
-        }
-
-        Cipher c = Cipher.getInstance(DES);
-        Key k = new SecretKeySpec(SECRET_KEY.getBytes(), DES);
-        c.init(Cipher.ENCRYPT_MODE, k);
-
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        CipherOutputStream cos = new CipherOutputStream(output, c);
-        cos.write(bytes);
-        cos.close();
-        return output.toByteArray();
     }
 
 }

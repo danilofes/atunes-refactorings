@@ -74,13 +74,26 @@ class PlaybackHistory {
             return sb.toString();
         }
 
+		void addToHistory(PlaybackHistory playbackHistory, IAudioObject audioObject) {
+		    if (playbackHistory.currentAudioObject != null && !playbackHistory.currentAudioObject.equals(audioObject)) {
+		        if (playbackHistory.previousHeap.get(1) == audioObject) {
+		            playbackHistory.currentAudioObject = playbackHistory.previousHeap.pop();
+		        } else if (get(1) == audioObject) {
+		            playbackHistory.currentAudioObject = pop();
+		        } else {
+		            playbackHistory.previousHeap.push(playbackHistory.currentAudioObject);
+		            playbackHistory.currentAudioObject = audioObject;
+		        }
+		    }
+		}
+
     }
 
     private Heap previousHeap = new Heap();
 
     private IAudioObject currentAudioObject;
 
-    private Heap nextHeap = new Heap();
+    Heap nextHeap = new Heap();
 
     IAudioObject getPreviousInHistory(int index) {
         return previousHeap.get(index);
@@ -112,19 +125,6 @@ class PlaybackHistory {
             return ao;
         }
         return null;
-    }
-
-    void addToHistory(IAudioObject audioObject) {
-        if (currentAudioObject != null && !currentAudioObject.equals(audioObject)) {
-            if (previousHeap.get(1) == audioObject) {
-                currentAudioObject = previousHeap.pop();
-            } else if (nextHeap.get(1) == audioObject) {
-                currentAudioObject = nextHeap.pop();
-            } else {
-                previousHeap.push(currentAudioObject);
-                currentAudioObject = audioObject;
-            }
-        }
     }
 
     void remove(List<IAudioObject> audioObjectsToRemove) {

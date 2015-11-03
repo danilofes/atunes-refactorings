@@ -23,7 +23,6 @@ package net.sourceforge.atunes.utils;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
@@ -70,22 +69,6 @@ public class XMLSerializerService {
     }
 
     /**
-     * Reads an object from a file
-     * @param inputStream
-     * @return
-     * @throws IOException
-     */
-    public Object readObjectFromFile(InputStream inputStream) throws IOException {
-        InputStreamReader inputStreamReader = null;
-        try {
-            inputStreamReader = new InputStreamReader(inputStream);
-            return getXStream().fromXML(inputStreamReader);
-        } finally {
-            ClosingUtils.close(inputStreamReader);
-        }
-    }
-
-    /**
      * Reads an object from a String as xml.
      * 
      * @param string
@@ -121,7 +104,7 @@ public class XMLSerializerService {
     /**
      * @return
      */
-    private XStream getXStream() {
+    XStream getXStream() {
     	try {
 			return xstreamFactory.getXStream();
 		} catch (ClassNotFoundException e) {

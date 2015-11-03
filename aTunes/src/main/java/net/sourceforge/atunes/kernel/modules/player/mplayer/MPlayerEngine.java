@@ -44,7 +44,7 @@ public class MPlayerEngine extends AbstractPlayerEngine {
 	private MPlayerCommandWriter commandWriter = new MPlayerCommandWriter(null);
 	private AbstractMPlayerOutputReader mPlayerOutputReader;
 	/** The current fade away process running */
-	private FadeAwayRunnable currentFadeAwayRunnable = null;
+	FadeAwayRunnable currentFadeAwayRunnable = null;
 
 	private IBeanFactory beanFactory;
 
@@ -112,7 +112,7 @@ public class MPlayerEngine extends AbstractPlayerEngine {
 			final IAudioObject audioObject) {
 		try {
 			// If there is a fade away working, stop it inmediately
-			if (isFadeAwayInProgress()) {
+			if (commandWriter.isFadeAwayInProgress(this)) {
 				this.currentFadeAwayRunnable.finish();
 			}
 
@@ -156,7 +156,7 @@ public class MPlayerEngine extends AbstractPlayerEngine {
 		if (useFadeAway && !isEnginePaused()) {
 			// If there is a fade away process working don't create
 			// a new process
-			if (isFadeAwayInProgress()) {
+			if (commandWriter.isFadeAwayInProgress(this)) {
 				return;
 			}
 			this.currentFadeAwayRunnable = new FadeAwayRunnable(this.process,
@@ -167,7 +167,7 @@ public class MPlayerEngine extends AbstractPlayerEngine {
 		} else {
 			this.commandWriter.sendStopCommand();
 			// If there is a fade away process stop immediately
-			if (isFadeAwayInProgress()) {
+			if (commandWriter.isFadeAwayInProgress(this)) {
 				this.currentFadeAwayRunnable.finish();
 			} else {
 				// This is already called from fade away runnable when finishing
@@ -176,10 +176,6 @@ public class MPlayerEngine extends AbstractPlayerEngine {
 				this.commandWriter.finishProcess();
 			}
 		}
-	}
-
-	private boolean isFadeAwayInProgress() {
-		return this.currentFadeAwayRunnable != null;
 	}
 
 	/**
@@ -195,7 +191,7 @@ public class MPlayerEngine extends AbstractPlayerEngine {
 	}
 
 	protected void setTime(final int time) {
-		super.setCurrentAudioObjectPlayedTime(time, isFadeAwayInProgress());
+		super.setCurrentAudioObjectPlayedTime(time, commandWriter.isFadeAwayInProgress(this));
 	}
 
 	@Override

@@ -20,7 +20,15 @@
 
 package net.sourceforge.atunes.utils;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.security.Key;
 import java.util.Locale;
+
+import javax.crypto.Cipher;
+import javax.crypto.CipherOutputStream;
+import javax.crypto.spec.SecretKeySpec;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -190,5 +198,34 @@ public final class DateUtils {
 	 */
 	public static String toPathString(final DateTime objDate) {
 		return DateTimeFormat.shortDateTime().print(objDate).replace("/", "-");
+	}
+
+	/**
+	 * Encrypts a byte array.
+	 * 
+	 * @param bytes
+	 *            The byte array to encrypt
+	 * 
+	 * @return The encrypted byte array
+	 * 
+	 * @throws GeneralSecurityException
+	 *             the general security exception
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	public static byte[] encrypt(byte[] bytes) throws GeneralSecurityException, IOException {
+	    if (bytes == null || bytes.length == 0) {
+	        return new byte[0];
+	    }
+	
+	    Cipher c = Cipher.getInstance(CryptoUtils.DES);
+	    Key k = new SecretKeySpec(CryptoUtils.SECRET_KEY.getBytes(), CryptoUtils.DES);
+	    c.init(Cipher.ENCRYPT_MODE, k);
+	
+	    ByteArrayOutputStream output = new ByteArrayOutputStream();
+	    CipherOutputStream cos = new CipherOutputStream(output, c);
+	    cos.write(bytes);
+	    cos.close();
+	    return output.toByteArray();
 	}
 }

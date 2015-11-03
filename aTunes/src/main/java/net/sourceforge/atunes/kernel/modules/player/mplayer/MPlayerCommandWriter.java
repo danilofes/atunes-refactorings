@@ -172,4 +172,8 @@ class MPlayerCommandWriter {
 			this.streamToProcess = null;
 		}
 	}
+
+	boolean isFadeAwayInProgress(MPlayerEngine mPlayerEngine) {
+		return mPlayerEngine.currentFadeAwayRunnable != null;
+	}
 }

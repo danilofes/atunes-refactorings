@@ -53,7 +53,9 @@ public class FavoritesSongsManager {
 
 	private IRepositoryHandler repositoryHandler;
 
-	private IUnknownObjectChecker unknownObjectChecker;
+	IUnknownObjectChecker unknownObjectChecker;
+	
+	private FavoritesObjectDataStore exported = new FavoritesObjectDataStore();
 
 	/**
 	 * @param unknownObjectChecker
@@ -199,15 +201,6 @@ public class FavoritesSongsManager {
 	 */
 	public boolean isSongFavorite(final IFavorites favorites,
 			final String artist, final String title) {
-		// TODO: This method checks all favorite songs to find one matching
-		// With favorites stored by metadata this would not be necessary
-		for (ILocalAudioObject ao : favorites.getFavoriteSongs()) {
-			if (ao.getArtist(this.unknownObjectChecker)
-					.equalsIgnoreCase(artist)
-					&& title.equalsIgnoreCase(ao.getTitle())) {
-				return true;
-			}
-		}
-		return false;
+		return exported.isSongFavorite(favorites, artist, title);
 	}
 }

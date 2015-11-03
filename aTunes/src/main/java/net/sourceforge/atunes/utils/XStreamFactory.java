@@ -20,6 +20,9 @@
 
 package net.sourceforge.atunes.utils;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
 
@@ -77,6 +80,23 @@ public class XStreamFactory {
         }
 
         return xstream;
+	}
+
+	/**
+	 * Reads an object from a file
+	 * @param xmlSerializerService TODO
+	 * @param inputStream
+	 * @return
+	 * @throws IOException
+	 */
+	public Object readObjectFromFile(XMLSerializerService xmlSerializerService, InputStream inputStream) throws IOException {
+	    InputStreamReader inputStreamReader = null;
+	    try {
+	        inputStreamReader = new InputStreamReader(inputStream);
+	        return xmlSerializerService.getXStream().fromXML(inputStreamReader);
+	    } finally {
+	        ClosingUtils.close(inputStreamReader);
+	    }
 	}
 
 }

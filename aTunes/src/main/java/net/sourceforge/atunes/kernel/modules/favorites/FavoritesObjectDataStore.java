@@ -24,6 +24,7 @@ import java.io.IOException;
 
 import net.sourceforge.atunes.Constants;
 import net.sourceforge.atunes.model.IFavorites;
+import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.IOSManager;
 import net.sourceforge.atunes.model.IObjectDataStore;
 import net.sourceforge.atunes.utils.KryoSerializerService;
@@ -38,6 +39,8 @@ import net.sourceforge.atunes.utils.StringUtils;
  */
 public class FavoritesObjectDataStore implements IObjectDataStore<IFavorites> {
 
+	private FavoritesSongsManager manager = new FavoritesSongsManager();
+	
 	private IOSManager osManager;
 
 	private KryoSerializerService kryoSerializerService;
@@ -90,5 +93,25 @@ public class FavoritesObjectDataStore implements IObjectDataStore<IFavorites> {
 	@Override
 	public void write(String id, IFavorites object) {
 		write(object);
+	}
+	
+	/**
+	 * @param favorites
+	 * @param artist
+	 * @param title
+	 * @return true if a song with given artist and title is favorite
+	 */
+	public boolean isSongFavorite(final IFavorites favorites,
+			final String artist, final String title) {
+		// TODO: This method checks all favorite songs to find one matching
+		// With favorites stored by metadata this would not be necessary
+		for (ILocalAudioObject ao : favorites.getFavoriteSongs()) {
+			if (ao.getArtist(manager.unknownObjectChecker)
+					.equalsIgnoreCase(artist)
+					&& title.equalsIgnoreCase(ao.getTitle())) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

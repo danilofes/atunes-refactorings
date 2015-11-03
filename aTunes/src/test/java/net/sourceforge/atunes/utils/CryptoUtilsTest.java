@@ -35,16 +35,16 @@ public class CryptoUtilsTest {
 
     @Test
     public void encryptAndDecryptTest() throws IOException, GeneralSecurityException {
-        Assert.assertEquals(TEST_STRING_1, new String(CryptoUtils.decrypt(CryptoUtils.encrypt(TEST_STRING_1.getBytes()))));
-        Assert.assertEquals(EMPTY_TEST_STRING, new String(CryptoUtils.decrypt(CryptoUtils.encrypt(EMPTY_TEST_STRING.getBytes()))));
-        Assert.assertEquals(EMPTY_TEST_STRING, new String(CryptoUtils.decrypt(CryptoUtils.encrypt((byte[]) null))));
-        Assert.assertEquals(TEST_STRING_2, new String(CryptoUtils.decrypt(CryptoUtils.encrypt(TEST_STRING_2.getBytes()))));
+        Assert.assertEquals(TEST_STRING_1, new String(CryptoUtils.decrypt(DateUtils.encrypt(TEST_STRING_1.getBytes()))));
+        Assert.assertEquals(EMPTY_TEST_STRING, new String(CryptoUtils.decrypt(DateUtils.encrypt(EMPTY_TEST_STRING.getBytes()))));
+        Assert.assertEquals(EMPTY_TEST_STRING, new String(CryptoUtils.decrypt(DateUtils.encrypt((byte[]) null))));
+        Assert.assertEquals(TEST_STRING_2, new String(CryptoUtils.decrypt(DateUtils.encrypt(TEST_STRING_2.getBytes()))));
     }
 
     @Test
     public void encryptTest() throws IOException, GeneralSecurityException {
-        Assert.assertFalse(TEST_STRING_1.equalsIgnoreCase(new String(CryptoUtils.encrypt(TEST_STRING_1.getBytes()))));
-        Assert.assertFalse(TEST_STRING_2.equalsIgnoreCase(new String(CryptoUtils.encrypt(TEST_STRING_2.getBytes()))));
+        Assert.assertFalse(TEST_STRING_1.equalsIgnoreCase(new String(DateUtils.encrypt(TEST_STRING_1.getBytes()))));
+        Assert.assertFalse(TEST_STRING_2.equalsIgnoreCase(new String(DateUtils.encrypt(TEST_STRING_2.getBytes()))));
     }
 
 }

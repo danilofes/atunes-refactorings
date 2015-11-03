@@ -246,7 +246,7 @@ final class PlayListMode implements IPlayListMode {
 
 	@Override
 	public void addToPlaybackHistory(final IAudioObject object) {
-		this.playbackHistory.addToHistory(object);
+		this.playbackHistory.nextHeap.addToHistory(this.playbackHistory, object);
 	}
 
 	@Override

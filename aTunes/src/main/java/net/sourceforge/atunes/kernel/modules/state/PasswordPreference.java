@@ -25,6 +25,7 @@ import java.security.GeneralSecurityException;
 import java.util.Arrays;
 
 import net.sourceforge.atunes.utils.CryptoUtils;
+import net.sourceforge.atunes.utils.DateUtils;
 import net.sourceforge.atunes.utils.Logger;
 
 /**
@@ -69,7 +70,7 @@ public class PasswordPreference extends Preference {
      */
     public final void setPassword(final String password) {
 	try {
-	    byte[] encrypted = CryptoUtils.encrypt(password.getBytes());
+	    byte[] encrypted = DateUtils.encrypt(password.getBytes());
 	    Logger.debug("Encrypted password: ", Arrays.toString(encrypted));
 	    super.setValue(encrypted);
 	} catch (GeneralSecurityException e) {
