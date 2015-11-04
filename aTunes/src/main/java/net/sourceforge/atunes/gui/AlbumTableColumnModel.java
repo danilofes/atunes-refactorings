@@ -34,8 +34,6 @@ public final class AlbumTableColumnModel extends AbstractCommonColumnModel {
 
     private static final long serialVersionUID = 8480107980198328642L;
 
-    private IColumnSet albumColumnSet;
-
     /**
      * @param albumColumnSet
      */

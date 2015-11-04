@@ -46,6 +46,7 @@ import net.sourceforge.atunes.model.IContextHandler;
 import net.sourceforge.atunes.model.IContextPanel;
 import net.sourceforge.atunes.model.IContextPanelContent;
 import net.sourceforge.atunes.model.IControlsBuilder;
+import net.sourceforge.atunes.model.IIconFactory;
 import net.sourceforge.atunes.model.ILookAndFeel;
 import net.sourceforge.atunes.utils.Logger;
 
@@ -77,6 +78,8 @@ public abstract class AbstractContextPanel implements IContextPanel {
 	private JProgressBar indeterminateProgressBar;
 
 	private IControlsBuilder controlsBuilder;
+
+	protected IIconFactory eventIcon;
 
 	/**
 	 * @param controlsBuilder

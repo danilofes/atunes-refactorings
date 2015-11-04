@@ -66,6 +66,7 @@ public abstract class AbstractCommonColumnModel extends DefaultTableColumnModel
 	private ILookAndFeelManager lookAndFeelManager;
 
 	private IBeanFactory beanFactory;
+	protected IColumnSet albumColumnSet;
 
 	protected final IBeanFactory getBeanFactory() {
 		return this.beanFactory;

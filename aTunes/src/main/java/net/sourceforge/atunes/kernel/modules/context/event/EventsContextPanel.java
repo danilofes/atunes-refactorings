@@ -37,8 +37,6 @@ import net.sourceforge.atunes.utils.I18nUtils;
  */
 public class EventsContextPanel extends AbstractContextPanel {
 
-	private IIconFactory eventIcon;
-
 	private IUnknownObjectChecker unknownObjectChecker;
 
 	/**

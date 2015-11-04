@@ -52,8 +52,6 @@ public abstract class CommonSingleFrame extends AbstractSingleFrame {
 	protected static final String RIGHT_SPLIT_PANE = "2";
 
 	private JSplitPane leftSplitPane;
-	private JSplitPane rightSplitPane;
-
 	/**
 	 * @return
 	 */

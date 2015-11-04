@@ -34,6 +34,7 @@ public abstract class MainSplitPaneLeftSingleFrame extends CommonSingleFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 2614947908607359290L;
+	protected JSplitPane navigatorSplitPane;
 
 
 	@Override

@@ -50,8 +50,6 @@ public final class MakeDonationDialog extends AbstractCustomDialog {
 
 	private static final long serialVersionUID = 4369595555397951445L;
 
-	private IDesktop desktop;
-
 	private String donationUrl;
 
 	private boolean dontShowAgain;

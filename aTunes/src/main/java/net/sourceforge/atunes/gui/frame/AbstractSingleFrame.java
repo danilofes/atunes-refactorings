@@ -102,6 +102,8 @@ abstract class AbstractSingleFrame extends AbstractCustomFrame implements
 
 	private IStateContext stateContext;
 
+	protected JSplitPane rightSplitPane;
+
 	/**
 	 * @param stateContext
 	 */

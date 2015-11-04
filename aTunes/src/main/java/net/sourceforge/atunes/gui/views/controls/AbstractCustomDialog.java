@@ -27,6 +27,7 @@ import javax.swing.JDialog;
 
 import net.sourceforge.atunes.gui.GuiUtils;
 import net.sourceforge.atunes.model.IControlsBuilder;
+import net.sourceforge.atunes.model.IDesktop;
 import net.sourceforge.atunes.model.IDialog;
 import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.ILookAndFeel;
@@ -47,6 +48,8 @@ public abstract class AbstractCustomDialog extends JDialog implements IDialog {
 	private final IControlsBuilder controlsBuilder;
 
 	private final CloseAction closeAction;
+
+	protected IDesktop desktop;
 
 	/**
 	 * Instantiates a new custom modal dialog.

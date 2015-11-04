@@ -39,8 +39,6 @@ public final class DefaultSingleFrame extends MainSplitPaneLeftSingleFrame {
 
 	private static final String NAVIGATOR_SPLIT_PANE = "3";
 
-	private JSplitPane navigatorSplitPane;
-
 	@Override
 	protected void setupSplitPaneDividerPosition(final IFrameState frameState) {
 		super.setupSplitPaneDividerPosition(frameState);
