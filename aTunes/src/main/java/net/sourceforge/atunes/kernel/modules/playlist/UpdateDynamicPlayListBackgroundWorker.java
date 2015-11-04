@@ -75,4 +75,9 @@ public class UpdateDynamicPlayListBackgroundWorker extends
 	@Override
 	protected void whileWorking(final List<Void> chunks) {
 	}
+
+	@Override
+	protected final void before() {
+		this.dialog.showDialog();
+	}
 }

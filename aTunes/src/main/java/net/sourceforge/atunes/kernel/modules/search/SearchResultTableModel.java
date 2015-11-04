@@ -23,6 +23,8 @@ package net.sourceforge.atunes.kernel.modules.search;
 import java.util.Collections;
 import java.util.List;
 
+import javax.swing.event.TableModelEvent;
+
 import net.sourceforge.atunes.gui.AbstractColumnSetTableModel;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IColumn;
@@ -106,5 +108,11 @@ public class SearchResultTableModel extends AbstractColumnSetTableModel {
 	@Override
 	public void sortByColumn(IColumn<?> column) {
 		Collections.sort(this.results, column.getComparator());
+	}
+
+	@Override
+	public final void sort(final IColumn<?> column) {
+		sortByColumn(column);
+		refresh(TableModelEvent.UPDATE);
 	}
 }

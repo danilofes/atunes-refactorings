@@ -27,6 +27,7 @@ import javax.swing.JLabel;
 import net.sourceforge.atunes.gui.AbstractTreeCellDecorator;
 import net.sourceforge.atunes.model.IFolder;
 import net.sourceforge.atunes.model.IIconFactory;
+import net.sourceforge.atunes.model.ILookAndFeelManager;
 
 /**
  * Tree cell decorator for folders
@@ -48,6 +49,13 @@ public class FolderTreeCellDecorator extends AbstractTreeCellDecorator<JLabel, I
 	public Component decorateTreeCellComponent(final JLabel component, final IFolder userObject, final boolean isSelected) {
 		component.setIcon(folderIcon.getIcon(getLookAndFeel().getPaintForColorMutableIcon(component, isSelected)));
 		return component;
+	}
+
+	/**
+	 * @param lookAndFeelManager
+	 */
+	public final void setLookAndFeelManager(final ILookAndFeelManager lookAndFeelManager) {
+		this.lookAndFeelManager = lookAndFeelManager;
 	}
 
 }

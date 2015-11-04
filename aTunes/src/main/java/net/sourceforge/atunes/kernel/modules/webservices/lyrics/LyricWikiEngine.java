@@ -181,4 +181,16 @@ public class LyricWikiEngine extends AbstractLyricsEngine {
 			final String title) {
 		return getURL(artist, title);
 	}
+
+	/**
+	 * Encode string.
+	 * 
+	 * @param str
+	 *            the str
+	 * 
+	 * @return the string
+	 */
+	protected final String encodeString(String str) {
+	    return networkHandler.encodeString(str);
+	}
 }

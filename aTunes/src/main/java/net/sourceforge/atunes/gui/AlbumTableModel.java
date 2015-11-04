@@ -136,4 +136,10 @@ public final class AlbumTableModel extends AbstractColumnSetTableModel {
 	@Override
 	public void sortByColumn(IColumn<?> column) {
 	}
+
+	@Override
+	public final void sort(final IColumn<?> column) {
+		sortByColumn(column);
+		refresh(TableModelEvent.UPDATE);
+	}
 }

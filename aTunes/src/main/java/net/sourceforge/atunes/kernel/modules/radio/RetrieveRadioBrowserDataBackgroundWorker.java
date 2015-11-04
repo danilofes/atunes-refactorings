@@ -109,4 +109,9 @@ public final class RetrieveRadioBrowserDataBackgroundWorker extends
 	protected void doneAndDialogClosed(List<IRadio> result) {
 		this.controller.show(result);
 	}
+
+	@Override
+	protected final void before() {
+		this.dialog.showDialog();
+	}
 }

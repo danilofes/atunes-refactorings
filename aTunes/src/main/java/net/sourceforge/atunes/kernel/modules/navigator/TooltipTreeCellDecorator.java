@@ -33,6 +33,7 @@ import net.sourceforge.atunes.kernel.modules.repository.Folder;
 import net.sourceforge.atunes.kernel.modules.repository.Genre;
 import net.sourceforge.atunes.kernel.modules.repository.Year;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.ILookAndFeelManager;
 import net.sourceforge.atunes.model.IStateNavigation;
 import net.sourceforge.atunes.model.ITreeObject;
 import net.sourceforge.atunes.model.IUnknownObjectChecker;
@@ -147,5 +148,12 @@ public class TooltipTreeCellDecorator extends
 					"Tooltip not implemented for class "
 							+ iTreeObject.getClass().getCanonicalName());
 		}
+	}
+
+	/**
+	 * @param lookAndFeelManager
+	 */
+	public final void setLookAndFeelManager(final ILookAndFeelManager lookAndFeelManager) {
+		this.lookAndFeelManager = lookAndFeelManager;
 	}
 }

@@ -125,4 +125,9 @@ public class ValidateAndProcessPreferencesBackgroundWorker
 		}
 		return needRestart;
 	}
+
+	@Override
+	protected final void before() {
+		this.dialog.showDialog();
+	}
 }

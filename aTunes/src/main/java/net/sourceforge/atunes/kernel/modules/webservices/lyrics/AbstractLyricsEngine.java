@@ -32,7 +32,7 @@ import net.sourceforge.atunes.model.INetworkHandler;
  */
 public abstract class AbstractLyricsEngine {
 
-    private INetworkHandler networkHandler;
+    protected INetworkHandler networkHandler;
 
     /**
      * @param networkHandler
@@ -41,18 +41,6 @@ public abstract class AbstractLyricsEngine {
 		this.networkHandler = networkHandler;
 	}
     
-    /**
-     * Encode string.
-     * 
-     * @param str
-     *            the str
-     * 
-     * @return the string
-     */
-    protected final String encodeString(String str) {
-        return networkHandler.encodeString(str);
-    }
-
     /**
      * Gets the connection.
      * @param url

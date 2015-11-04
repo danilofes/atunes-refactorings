@@ -28,6 +28,7 @@ import net.sourceforge.atunes.gui.AbstractTreeCellDecorator;
 import net.sourceforge.atunes.model.IAlbum;
 import net.sourceforge.atunes.model.IFavoritesHandler;
 import net.sourceforge.atunes.model.IIconFactory;
+import net.sourceforge.atunes.model.ILookAndFeelManager;
 import net.sourceforge.atunes.model.IStateNavigation;
 
 /**
@@ -87,5 +88,12 @@ public class AlbumTreeCellDecorator extends
 	 */
 	public void setFavoritesHandler(final IFavoritesHandler favoritesHandler) {
 		this.favoritesHandler = favoritesHandler;
+	}
+
+	/**
+	 * @param lookAndFeelManager
+	 */
+	public final void setLookAndFeelManager(final ILookAndFeelManager lookAndFeelManager) {
+		this.lookAndFeelManager = lookAndFeelManager;
 	}
 }

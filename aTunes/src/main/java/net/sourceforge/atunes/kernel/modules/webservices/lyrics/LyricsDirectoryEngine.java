@@ -125,4 +125,16 @@ public class LyricsDirectoryEngine extends AbstractLyricsEngine {
 			final String title) {
 		return "";
 	}
+
+	/**
+	 * Encode string.
+	 * 
+	 * @param str
+	 *            the str
+	 * 
+	 * @return the string
+	 */
+	protected final String encodeString(String str) {
+	    return networkHandler.encodeString(str);
+	}
 }

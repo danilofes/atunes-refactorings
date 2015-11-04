@@ -37,7 +37,7 @@ import net.sourceforge.atunes.utils.ReflectionUtils;
  */
 public abstract class AbstractTreeCellDecorator<T extends Component, U> {
 
-	private ILookAndFeelManager lookAndFeelManager;
+	protected ILookAndFeelManager lookAndFeelManager;
 
 	private final Class<?> componentClass;
 
@@ -54,13 +54,6 @@ public abstract class AbstractTreeCellDecorator<T extends Component, U> {
 		} else if (types[1] instanceof ParameterizedType) {
 			this.valueClass = (Class<?>) ((ParameterizedType)types[1]).getRawType();
 		}
-	}
-
-	/**
-	 * @param lookAndFeelManager
-	 */
-	public final void setLookAndFeelManager(final ILookAndFeelManager lookAndFeelManager) {
-		this.lookAndFeelManager = lookAndFeelManager;
 	}
 
 	/**

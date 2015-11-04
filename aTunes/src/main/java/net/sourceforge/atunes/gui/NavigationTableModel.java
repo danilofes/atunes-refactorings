@@ -131,4 +131,10 @@ public final class NavigationTableModel extends AbstractColumnSetTableModel {
 		Collections.sort(this.audioObjects, column.getComparator());
 		Logger.debug("Navigation table sort: ", t.stop(), " seconds");
 	}
+
+	@Override
+	public final void sort(final IColumn<?> column) {
+		sortByColumn(column);
+		refresh(TableModelEvent.UPDATE);
+	}
 }

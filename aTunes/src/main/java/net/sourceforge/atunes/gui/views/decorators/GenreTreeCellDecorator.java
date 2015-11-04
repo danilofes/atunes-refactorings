@@ -27,6 +27,7 @@ import javax.swing.JLabel;
 import net.sourceforge.atunes.gui.AbstractTreeCellDecorator;
 import net.sourceforge.atunes.model.IGenre;
 import net.sourceforge.atunes.model.IIconFactory;
+import net.sourceforge.atunes.model.ILookAndFeelManager;
 
 /**
  * Tree cell decorator for genres
@@ -48,6 +49,13 @@ public class GenreTreeCellDecorator extends AbstractTreeCellDecorator<JLabel, IG
 	public Component decorateTreeCellComponent(final JLabel component, final IGenre userObject, final boolean isSelected) {
 		component.setIcon(genreIcon.getIcon(getLookAndFeel().getPaintForColorMutableIcon(component, isSelected)));
 		return component;
+	}
+
+	/**
+	 * @param lookAndFeelManager
+	 */
+	public final void setLookAndFeelManager(final ILookAndFeelManager lookAndFeelManager) {
+		this.lookAndFeelManager = lookAndFeelManager;
 	}
 
 }

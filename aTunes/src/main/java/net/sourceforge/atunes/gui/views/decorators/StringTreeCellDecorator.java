@@ -29,6 +29,7 @@ import javax.swing.JLabel;
 
 import net.sourceforge.atunes.gui.AbstractTreeCellDecorator;
 import net.sourceforge.atunes.model.IIconFactory;
+import net.sourceforge.atunes.model.ILookAndFeelManager;
 import net.sourceforge.atunes.utils.I18nUtils;
 
 /**
@@ -107,5 +108,12 @@ public class StringTreeCellDecorator extends
 			iconsByString.put(I18nUtils.getString("SONGS"), audioFileSmallIcon);
 		}
 		return iconsByString;
+	}
+
+	/**
+	 * @param lookAndFeelManager
+	 */
+	public final void setLookAndFeelManager(final ILookAndFeelManager lookAndFeelManager) {
+		this.lookAndFeelManager = lookAndFeelManager;
 	}
 }

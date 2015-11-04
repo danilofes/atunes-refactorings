@@ -36,7 +36,7 @@ public abstract class BackgroundWorkerWithIndeterminateProgress<T, I> extends
 
 	private IDialogFactory dialogFactory;
 
-	private IIndeterminateProgressDialog dialog;
+	protected IIndeterminateProgressDialog dialog;
 
 	/**
 	 * @return dialog factory
@@ -53,11 +53,6 @@ public abstract class BackgroundWorkerWithIndeterminateProgress<T, I> extends
 		this.dialog = dialogFactory
 				.newDialog(IIndeterminateProgressDialog.class);
 		this.dialog.setTitle(getDialogTitle());
-	}
-
-	@Override
-	protected final void before() {
-		this.dialog.showDialog();
 	}
 
 	@Override

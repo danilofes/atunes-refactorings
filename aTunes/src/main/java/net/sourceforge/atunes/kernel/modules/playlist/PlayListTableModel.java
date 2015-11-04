@@ -20,6 +20,8 @@
 
 package net.sourceforge.atunes.kernel.modules.playlist;
 
+import javax.swing.event.TableModelEvent;
+
 import net.sourceforge.atunes.gui.AbstractColumnSetTableModel;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IColumn;
@@ -141,5 +143,11 @@ public class PlayListTableModel extends AbstractColumnSetTableModel {
 		}
 
 		this.visiblePlayList.sortByColumn(column);
+	}
+
+	@Override
+	public final void sort(final IColumn<?> column) {
+		sortByColumn(column);
+		refresh(TableModelEvent.UPDATE);
 	}
 }

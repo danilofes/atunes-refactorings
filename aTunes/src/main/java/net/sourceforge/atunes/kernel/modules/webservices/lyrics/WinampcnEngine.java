@@ -142,4 +142,16 @@ public class WinampcnEngine extends AbstractLyricsEngine {
     public String getUrlForAddingNewLyrics(String artist, String title) {
         return "";
     }
+
+	/**
+	 * Encode string.
+	 * 
+	 * @param str
+	 *            the str
+	 * 
+	 * @return the string
+	 */
+	protected final String encodeString(String str) {
+	    return networkHandler.encodeString(str);
+	}
 }

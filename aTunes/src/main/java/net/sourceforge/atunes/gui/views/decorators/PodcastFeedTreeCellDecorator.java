@@ -26,6 +26,7 @@ import javax.swing.JLabel;
 
 import net.sourceforge.atunes.gui.AbstractTreeCellDecorator;
 import net.sourceforge.atunes.model.IIconFactory;
+import net.sourceforge.atunes.model.ILookAndFeelManager;
 import net.sourceforge.atunes.model.IPodcastFeed;
 
 /**
@@ -48,6 +49,13 @@ public class PodcastFeedTreeCellDecorator extends AbstractTreeCellDecorator<JLab
 	public Component decorateTreeCellComponent(final JLabel component, final IPodcastFeed userObject, final boolean isSelected) {
 		component.setIcon(rssSmallIcon.getIcon(getLookAndFeel().getPaintForColorMutableIcon(component, isSelected)));
 		return component;
+	}
+
+	/**
+	 * @param lookAndFeelManager
+	 */
+	public final void setLookAndFeelManager(final ILookAndFeelManager lookAndFeelManager) {
+		this.lookAndFeelManager = lookAndFeelManager;
 	}
 
 }

@@ -26,6 +26,7 @@ import java.awt.Component;
 import javax.swing.JLabel;
 
 import net.sourceforge.atunes.gui.AbstractTreeCellDecorator;
+import net.sourceforge.atunes.model.ILookAndFeelManager;
 import net.sourceforge.atunes.model.IStateNavigation;
 import net.sourceforge.atunes.model.ITagHandler;
 import net.sourceforge.atunes.model.ITreeObject;
@@ -76,5 +77,12 @@ public class IncompleteTagsTreeCellDecorator extends
 	}
 	return component;
     }
+
+	/**
+	 * @param lookAndFeelManager
+	 */
+	public final void setLookAndFeelManager(final ILookAndFeelManager lookAndFeelManager) {
+		this.lookAndFeelManager = lookAndFeelManager;
+	}
 
 }

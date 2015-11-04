@@ -130,4 +130,9 @@ public class CalculateSynchronizationBetweenDeviceAndPlayListBackgroundWorker
 	protected void doneAndDialogClosed(
 			Map<String, List<ILocalAudioObject>> result) {
 	}
+
+	@Override
+	protected final void before() {
+		this.dialog.showDialog();
+	}
 }

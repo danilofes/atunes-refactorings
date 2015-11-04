@@ -89,4 +89,9 @@ public final class DeleteFilesTask extends
 	@Override
 	protected void doneAndDialogClosed(Void result) {
 	}
+
+	@Override
+	protected final void before() {
+		this.dialog.showDialog();
+	}
 }

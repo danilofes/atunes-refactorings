@@ -253,4 +253,16 @@ public class LyrcEngine extends AbstractLyricsEngine {
 		return ADD_LYRICS_URL.replace(SONG_WILDCARD, encodeString(title))
 				.replace(ARTIST_WILDCARD, encodeString(artist));
 	}
+
+	/**
+	 * Encode string.
+	 * 
+	 * @param str
+	 *            the str
+	 * 
+	 * @return the string
+	 */
+	protected final String encodeString(String str) {
+	    return networkHandler.encodeString(str);
+	}
 }

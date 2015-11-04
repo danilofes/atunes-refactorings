@@ -80,18 +80,12 @@ public class ProgressDialog extends AbstractCustomDialog implements
 		super(frame, 450, 150, false, CloseAction.DISPOSE, controlsBuilder);
 	}
 
-	@Override
-	public void initialize() {
-		add(getContent());
-		setResizable(false);
-	}
-
 	/**
 	 * Gets the content.
 	 * 
 	 * @return the content
 	 */
-	private JPanel getContent() {
+	protected JPanel getContent() {
 		JPanel panel = new JPanel(new GridBagLayout());
 		this.progressBar = new JProgressBar();
 		this.progressBar.setBorder(BorderFactory.createEmptyBorder());

@@ -20,8 +20,6 @@
 
 package net.sourceforge.atunes.gui;
 
-import javax.swing.event.TableModelEvent;
-
 import net.sourceforge.atunes.model.IColumn;
 import net.sourceforge.atunes.model.IColumnSet;
 import net.sourceforge.atunes.model.IColumnSetTableModel;
@@ -93,12 +91,6 @@ public abstract class AbstractColumnSetTableModel extends
 	@Override
 	public final void setColumnSet(final IColumnSet columnSet) {
 		this.columnSet = columnSet;
-	}
-
-	@Override
-	public final void sort(final IColumn<?> column) {
-		sortByColumn(column);
-		refresh(TableModelEvent.UPDATE);
 	}
 
 	/**

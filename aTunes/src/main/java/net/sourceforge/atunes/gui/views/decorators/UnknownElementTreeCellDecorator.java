@@ -26,6 +26,7 @@ import java.awt.Component;
 import javax.swing.JLabel;
 
 import net.sourceforge.atunes.gui.AbstractTreeCellDecorator;
+import net.sourceforge.atunes.model.ILookAndFeelManager;
 import net.sourceforge.atunes.model.IUnknownObjectChecker;
 
 /**
@@ -72,5 +73,12 @@ public class UnknownElementTreeCellDecorator extends
 		|| unknownObjectChecker.isUnknownGenre(string)
 		|| unknownObjectChecker.isUnknownYear(string);
     }
+
+	/**
+	 * @param lookAndFeelManager
+	 */
+	public final void setLookAndFeelManager(final ILookAndFeelManager lookAndFeelManager) {
+		this.lookAndFeelManager = lookAndFeelManager;
+	}
 
 }
