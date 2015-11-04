@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.utils.Logger;
 
 /**
@@ -39,6 +40,7 @@ public final class MacOSXPlayerEngineSelectionDialogSearchPlayerEngineBackground
 		extends BackgroundWorker<List<String>, Void> {
 
 	private MacOSXPlayerSelectionDialog dialog;
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param dialog

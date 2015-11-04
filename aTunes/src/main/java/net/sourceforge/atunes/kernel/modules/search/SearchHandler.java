@@ -26,6 +26,7 @@ import java.util.List;
 
 import net.sourceforge.atunes.kernel.AbstractHandler;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.ISearchField;
 import net.sourceforge.atunes.model.ISearchHandler;
 import net.sourceforge.atunes.model.ISearchNode;
@@ -39,6 +40,8 @@ import net.sourceforge.atunes.utils.Logger;
  */
 public final class SearchHandler extends AbstractHandler implements
 		ISearchHandler {
+
+	private IFrame frame;
 
 	@Override
 	public void startSearch() {
@@ -81,5 +84,17 @@ public final class SearchHandler extends AbstractHandler implements
 		}
 		controller.setSearchFieldsList(fields);
 		return controller;
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

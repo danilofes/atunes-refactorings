@@ -27,6 +27,7 @@ import javax.swing.ImageIcon;
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.model.IAlbum;
 import net.sourceforge.atunes.model.IArtist;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.ILocalAudioObjectImageHandler;
 import net.sourceforge.atunes.model.ITreeObject;
 import net.sourceforge.atunes.model.IWebServicesHandler;
@@ -46,6 +47,8 @@ public final class ExtendedToolTipGetAndSetImageBackgroundWorker extends
 	private Object currentObject;
 
 	private ExtendedTooltipContent extendedTooltipContent;
+
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param extendedTooltipContent

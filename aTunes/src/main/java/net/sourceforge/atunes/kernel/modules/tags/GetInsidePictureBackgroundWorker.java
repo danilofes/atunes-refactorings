@@ -26,6 +26,7 @@ import javax.swing.ImageIcon;
 
 import net.sourceforge.atunes.Constants;
 import net.sourceforge.atunes.kernel.BackgroundWorker;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.ILocalAudioObjectImageHandler;
 
@@ -43,6 +44,8 @@ public final class GetInsidePictureBackgroundWorker extends
 	private EditTagDialogController controller;
 
 	private ILocalAudioObjectImageHandler localAudioObjectImageHandler;
+
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param localAudioObjectImageHandler

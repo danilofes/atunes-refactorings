@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.List;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IOSManager;
 
 /**
@@ -40,6 +41,8 @@ public final class OpenFileBackgroundWorker extends
 	private File fileToOpen;
 
 	private IOSManager osManager;
+
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param osManager

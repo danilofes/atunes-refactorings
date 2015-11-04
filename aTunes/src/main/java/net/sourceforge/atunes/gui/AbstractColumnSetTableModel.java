@@ -35,8 +35,10 @@ import net.sourceforge.atunes.utils.StringUtils;
 public abstract class AbstractColumnSetTableModel extends
 		AbstractCommonTableModel implements IColumnSetTableModel {
 
-	private IColumnSet columnSet;
-
+	public abstract IColumnSet getColumnSet();
+	
+	public abstract void setColumnSet(IColumnSet columnSet);
+	
 	/**
 	 * Returns column data class.
 	 * 
@@ -58,7 +60,7 @@ public abstract class AbstractColumnSetTableModel extends
 	 */
 	@Override
 	public final int getColumnCount() {
-		return this.columnSet != null ? this.columnSet.getVisibleColumnCount()
+		return this.getColumnSet() != null ? this.getColumnSet().getVisibleColumnCount()
 				: 0;
 	}
 
@@ -86,13 +88,8 @@ public abstract class AbstractColumnSetTableModel extends
 	 * @return
 	 */
 	protected final IColumn<?> getColumn(final int colIndex) {
-		return this.columnSet != null ? this.columnSet.getColumn(this.columnSet
+		return getColumnSet() != null ? this.getColumnSet().getColumn(this.getColumnSet()
 				.getColumnId(colIndex)) : null;
-	}
-
-	@Override
-	public final void setColumnSet(final IColumnSet columnSet) {
-		this.columnSet = columnSet;
 	}
 
 	@Override

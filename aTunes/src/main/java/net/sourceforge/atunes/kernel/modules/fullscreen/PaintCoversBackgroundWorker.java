@@ -27,6 +27,7 @@ import javax.swing.ImageIcon;
 import net.sourceforge.atunes.gui.images.Images;
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.IBeanFactory;
 
 /**
  * Gets image and paints in a cover of full screen window
@@ -42,6 +43,7 @@ public final class PaintCoversBackgroundWorker extends
 	private int imageSize;
 
 	private FullScreenCoverImageRetriever fullScreenCoverImageRetriever;
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param fullScreenCoverImageRetriever

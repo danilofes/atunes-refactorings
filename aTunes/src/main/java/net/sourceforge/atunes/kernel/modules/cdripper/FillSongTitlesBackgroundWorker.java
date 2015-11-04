@@ -26,6 +26,7 @@ import java.util.List;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.model.IAlbumInfo;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.ITrackInfo;
 import net.sourceforge.atunes.model.IWebServicesHandler;
 
@@ -42,6 +43,7 @@ public final class FillSongTitlesBackgroundWorker extends
 	private String artist;
 	private String album;
 	private IWebServicesHandler webServicesHandler;
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param ripperHandler

@@ -29,6 +29,7 @@ import net.sourceforge.atunes.kernel.AbstractHandler;
 import net.sourceforge.atunes.model.ApplicationVersion;
 import net.sourceforge.atunes.model.IApplicationArguments;
 import net.sourceforge.atunes.model.IApplicationUpdatedListener;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.INetworkHandler;
 import net.sourceforge.atunes.model.ITaskService;
 import net.sourceforge.atunes.model.IUpdateHandler;
@@ -59,6 +60,8 @@ public final class UpdateHandler extends AbstractHandler implements
 	private String versionFile;
 
 	private String versionProperty;
+
+	private IFrame frame;
 
 	/**
 	 * @param versionProperty
@@ -198,5 +201,17 @@ public final class UpdateHandler extends AbstractHandler implements
 	private Document getVersionXml() throws IOException {
 		return XMLUtils.getXMLDocument(this.networkHandler
 				.readURL(this.networkHandler.getConnection(this.updatesURL)));
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

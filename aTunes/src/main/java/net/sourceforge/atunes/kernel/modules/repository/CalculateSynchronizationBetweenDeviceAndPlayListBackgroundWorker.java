@@ -26,6 +26,8 @@ import java.util.Map;
 
 import net.sourceforge.atunes.kernel.BackgroundWorkerWithIndeterminateProgress;
 import net.sourceforge.atunes.model.IDeviceHandler;
+import net.sourceforge.atunes.model.IDialogFactory;
+import net.sourceforge.atunes.model.IIndeterminateProgressDialog;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.ILocalAudioObjectFilter;
 import net.sourceforge.atunes.model.IPlayList;
@@ -51,6 +53,26 @@ public class CalculateSynchronizationBetweenDeviceAndPlayListBackgroundWorker
 
 	private IPlayList playList;
 
+	private IDialogFactory dialogFactory;
+
+	
+	/**
+	 * @return dialog factory
+	 */
+	public IDialogFactory getDialogFactory() {
+		return dialogFactory;
+	}
+
+	/**
+	 * @param dialogFactory
+	 */
+	public void setDialogFactory(IDialogFactory dialogFactory) {
+		this.dialogFactory = dialogFactory;
+		super.dialog = dialogFactory
+				.newDialog(IIndeterminateProgressDialog.class);
+		this.dialog.setTitle(getDialogTitle());
+	}
+	
 	/**
 	 * @param deviceHandler
 	 */

@@ -27,6 +27,7 @@ import java.io.StringReader;
 import net.sourceforge.atunes.Constants;
 import net.sourceforge.atunes.model.ILyrics;
 import net.sourceforge.atunes.model.ILyricsRetrieveOperation;
+import net.sourceforge.atunes.model.INetworkHandler;
 import net.sourceforge.atunes.utils.Logger;
 import net.sourceforge.atunes.utils.StringUtils;
 
@@ -53,6 +54,15 @@ public class LyrDBEngine extends AbstractLyricsEngine {
 	/** The url to retrieve a lyric */
 	private static final String LYRIC_URL = StringUtils.getString(
 			"http://www.lyrdb.com/getlyr.php?q=", LYRICS_ID_WILDCARD);
+	private INetworkHandler networkHandler;
+
+	public INetworkHandler getNetworkHandler() {
+		return networkHandler;
+	}
+
+	public void setNetworkHandler(INetworkHandler networkHandler) {
+		this.networkHandler = networkHandler;
+	}
 
 	@Override
 	public ILyrics getLyricsFor(String artist, String title,

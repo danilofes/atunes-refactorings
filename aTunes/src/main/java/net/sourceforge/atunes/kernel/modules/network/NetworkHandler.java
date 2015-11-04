@@ -40,6 +40,7 @@ import javax.imageio.ImageIO;
 
 import net.sourceforge.atunes.Constants;
 import net.sourceforge.atunes.kernel.AbstractHandler;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.INetworkHandler;
 import net.sourceforge.atunes.model.IProxyBean;
 import net.sourceforge.atunes.model.IStateCore;
@@ -68,6 +69,8 @@ public class NetworkHandler extends AbstractHandler implements INetworkHandler {
 	private int connectTimeoutInSeconds;
 
 	private int readTimeoutInSeconds;
+
+	private IFrame frame;
 
 	/**
 	 * @param connectTimeoutInSeconds
@@ -314,5 +317,17 @@ public class NetworkHandler extends AbstractHandler implements INetworkHandler {
 		return StringUtils.getString(
 				URLEncoder.encode(parameter.getKey(), "UTF-8"), "=",
 				URLEncoder.encode(parameter.getValue(), "UTF-8"));
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

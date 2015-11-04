@@ -20,6 +20,8 @@
 
 package net.sourceforge.atunes.gui.views.dialogs;
 
+import javax.swing.JButton;
+
 import net.sourceforge.atunes.model.IControlsBuilder;
 import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.utils.StringUtils;
@@ -30,6 +32,16 @@ import net.sourceforge.atunes.utils.StringUtils;
 public final class TransferProgressDialog extends ProgressDialog {
 
 	private static final long serialVersionUID = 1264914965691724365L;
+	/** The cancel button. */
+	private JButton cancelButton;
+
+	public JButton getCancelButton() {
+		return cancelButton;
+	}
+
+	public void setCancelButton(JButton cancelButton) {
+		this.cancelButton = cancelButton;
+	}
 
 	/**
 	 * Instantiates a new transfer progress dialog.

@@ -46,7 +46,7 @@ import net.sourceforge.atunes.utils.I18nUtils;
  * @author alex
  * 
  */
-public class ProgressDialog extends AbstractCustomDialog implements
+public abstract class ProgressDialog extends AbstractCustomDialog implements
 		IProgressDialog {
 
 	private static final long serialVersionUID = 5792663290880992661L;
@@ -66,9 +66,6 @@ public class ProgressDialog extends AbstractCustomDialog implements
 	/** The total label. */
 	private JLabel totalLabel;
 
-	/** The cancel button. */
-	private JButton cancelButton;
-
 	/**
 	 * Instantiates a new transfer progress dialog.
 	 * 
@@ -86,6 +83,10 @@ public class ProgressDialog extends AbstractCustomDialog implements
 		setResizable(false);
 	}
 
+	public abstract JButton getCancelButton();
+	
+	public abstract void setCancelButton(JButton cancelButton);
+	
 	/**
 	 * Gets the content.
 	 * 
@@ -101,7 +102,7 @@ public class ProgressDialog extends AbstractCustomDialog implements
 		this.currentLabel = new JLabel();
 		JLabel separatorLabel = new JLabel(" / ");
 		this.totalLabel = new JLabel();
-		this.cancelButton = new JButton(I18nUtils.getString("CANCEL"));
+		setCancelButton(new JButton(I18nUtils.getString("CANCEL")));
 
 		arrangePanel(panel, separatorLabel);
 
@@ -150,7 +151,7 @@ public class ProgressDialog extends AbstractCustomDialog implements
 		c.gridy = 2;
 		c.fill = GridBagConstraints.NONE;
 		c.anchor = GridBagConstraints.CENTER;
-		panel.add(this.cancelButton, c);
+		panel.add(getCancelButton(), c);
 	}
 
 	@Override
@@ -175,12 +176,12 @@ public class ProgressDialog extends AbstractCustomDialog implements
 
 	@Override
 	public void addCancelButtonActionListener(final ActionListener a) {
-		this.cancelButton.addActionListener(a);
+		getCancelButton().addActionListener(a);
 	}
 
 	@Override
 	public void disableCancelButton() {
-		this.cancelButton.setEnabled(false);
+		getCancelButton().setEnabled(false);
 	}
 
 	@Override

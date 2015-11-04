@@ -26,6 +26,7 @@ import javax.swing.SwingUtilities;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.model.CDMetadata;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IErrorDialog;
 import net.sourceforge.atunes.model.IStateRipper;
@@ -46,6 +47,7 @@ public final class GetCdInfoAndStartRippingBackgroundWorker extends
 	private RipCdDialog dialog;
 	private IWebServicesHandler webServicesHandler;
 	private IStateRipper stateRipper;
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param stateRipper

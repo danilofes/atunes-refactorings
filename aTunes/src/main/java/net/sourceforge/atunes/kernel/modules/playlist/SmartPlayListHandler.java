@@ -30,6 +30,7 @@ import net.sourceforge.atunes.model.IAlbum;
 import net.sourceforge.atunes.model.IArtist;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IAudioObjectComparator;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.IPlayListHandler;
 import net.sourceforge.atunes.model.IRepositoryHandler;
@@ -50,6 +51,7 @@ public final class SmartPlayListHandler extends AbstractHandler implements
 	private IPlayListHandler playListHandler;
 
 	private IRepositoryHandler repositoryHandler;
+	private IFrame frame;
 
 	/**
 	 * @param repositoryHandler
@@ -176,5 +178,17 @@ public final class SmartPlayListHandler extends AbstractHandler implements
 			getBean(IAudioObjectComparator.class).sort(audioObjects);
 			this.playListHandler.addToVisiblePlayList(audioObjects);
 		}
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

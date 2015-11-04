@@ -39,6 +39,7 @@ import net.sourceforge.atunes.gui.views.dialogs.CoverNavigatorDialog;
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.model.IAlbum;
 import net.sourceforge.atunes.model.IArtist;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IControlsBuilder;
 import net.sourceforge.atunes.model.ILocalAudioObjectImageHandler;
 
@@ -58,6 +59,8 @@ public final class GenerateAndShowAlbumPanelsBackgroundWorker extends
 	private IControlsBuilder controlsBuilder;
 
 	private ILocalAudioObjectImageHandler localAudioObjectImageHandler;
+
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param localAudioObjectImageHandler

@@ -29,6 +29,7 @@ import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.model.IArtist;
 import net.sourceforge.atunes.model.IArtistInfo;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.IPlayListHandler;
 import net.sourceforge.atunes.model.IRepositoryHandler;
@@ -64,6 +65,8 @@ public class GetSimilarArtistAudioObjectsBackgroundWorker extends
 
 	private final Random randomGenerator = new Random(
 			System.currentTimeMillis());
+
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param playListHandler

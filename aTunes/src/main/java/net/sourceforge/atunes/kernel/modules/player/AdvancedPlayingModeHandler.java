@@ -23,6 +23,7 @@ package net.sourceforge.atunes.kernel.modules.player;
 import net.sourceforge.atunes.kernel.AbstractHandler;
 import net.sourceforge.atunes.model.IAdvancedPlayingModeHandler;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IStatePlayer;
 import net.sourceforge.atunes.model.PlaybackState;
 
@@ -39,6 +40,8 @@ public class AdvancedPlayingModeHandler extends AbstractHandler implements IAdva
 	private IStatePlayer statePlayer;
 
 	private SimilarArtistMode similarArtistMode;
+
+	private IFrame frame;
 	
 	/**
 	 * @param similarArtistMode
@@ -64,5 +67,17 @@ public class AdvancedPlayingModeHandler extends AbstractHandler implements IAdva
 	@Override
 	public void enableSimilarArtistMode(boolean enabled) {
 		similarArtistMode.setEnabled(enabled);
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -36,6 +36,7 @@ import net.sourceforge.atunes.model.IAboutDialog;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IControlsBuilder;
 import net.sourceforge.atunes.model.IDialogFactory;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IFrameState;
 import net.sourceforge.atunes.model.IKernel;
 import net.sourceforge.atunes.model.ILocaleBean;
@@ -67,6 +68,8 @@ public final class UIHandler extends AbstractHandler implements IUIHandler {
 	private IUnknownObjectChecker unknownObjectChecker;
 
 	private IControlsBuilder controlsBuilder;
+
+	private IFrame frame;
 
 	/**
 	 * @param controlsBuilder
@@ -287,5 +290,17 @@ public final class UIHandler extends AbstractHandler implements IUIHandler {
 		if (this.stateUI.isShowSystemTray()) {
 			getFrame().setVisible(false);
 		}
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

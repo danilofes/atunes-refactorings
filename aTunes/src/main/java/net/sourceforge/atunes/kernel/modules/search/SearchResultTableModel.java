@@ -26,6 +26,7 @@ import java.util.List;
 import net.sourceforge.atunes.gui.AbstractColumnSetTableModel;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IColumn;
+import net.sourceforge.atunes.model.IColumnSet;
 
 /**
  * The table model for search results.
@@ -33,6 +34,15 @@ import net.sourceforge.atunes.model.IColumn;
 public class SearchResultTableModel extends AbstractColumnSetTableModel {
 
 	private List<IAudioObject> results;
+	private IColumnSet columnSet;
+
+	public IColumnSet getColumnSet() {
+		return columnSet;
+	}
+
+	public void setColumnSet(IColumnSet columnSet) {
+		this.columnSet = columnSet;
+	}
 
 	/**
 	 * Return row count.

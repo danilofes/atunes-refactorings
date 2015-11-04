@@ -32,6 +32,7 @@ import net.sourceforge.atunes.model.IArtistInfo;
 import net.sourceforge.atunes.model.IArtistTopTracks;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IEvent;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.ILovedTrack;
 import net.sourceforge.atunes.model.ILyrics;
@@ -55,6 +56,8 @@ public class WebServicesHandler extends AbstractHandler implements
 	private ITaskService taskService;
 
 	private IStateContext stateContext;
+
+	private IFrame frame;
 
 	/**
 	 * @param stateContext
@@ -246,5 +249,17 @@ public class WebServicesHandler extends AbstractHandler implements
 	@Override
 	public List<IEvent> getRecommendedEvents() {
 		return getLastFmService().getRecommendedEvents();
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

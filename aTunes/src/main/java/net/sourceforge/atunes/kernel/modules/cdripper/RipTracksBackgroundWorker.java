@@ -26,6 +26,7 @@ import java.util.List;
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.kernel.actions.RipCDAction;
 import net.sourceforge.atunes.kernel.modules.repository.RepositoryAutoRefresher;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IRipperProgressDialog;
 
 /**
@@ -49,6 +50,8 @@ public class RipTracksBackgroundWorker extends BackgroundWorker<Boolean, Void> {
 	private List<File> filesImported;
 
 	private RipperHandler ripperHandler;
+
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param repositoryRefresher

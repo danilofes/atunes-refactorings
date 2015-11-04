@@ -27,6 +27,7 @@ import javax.swing.event.TableModelEvent;
 
 import net.sourceforge.atunes.model.IAlbum;
 import net.sourceforge.atunes.model.IColumn;
+import net.sourceforge.atunes.model.IColumnSet;
 
 /**
  * The Class AlbumTableModel.
@@ -37,6 +38,15 @@ public final class AlbumTableModel extends AbstractColumnSetTableModel {
 
 	/** The albums. */
 	private List<IAlbum> albums;
+	private IColumnSet columnSet;
+
+	public IColumnSet getColumnSet() {
+		return columnSet;
+	}
+
+	public void setColumnSet(IColumnSet columnSet) {
+		this.columnSet = columnSet;
+	}
 
 	/*
 	 * (non-Javadoc)

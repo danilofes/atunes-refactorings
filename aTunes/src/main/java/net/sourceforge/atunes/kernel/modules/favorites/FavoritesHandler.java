@@ -29,6 +29,7 @@ import net.sourceforge.atunes.model.IArtist;
 import net.sourceforge.atunes.model.IAudioFilesRemovedListener;
 import net.sourceforge.atunes.model.IFavorites;
 import net.sourceforge.atunes.model.IFavoritesHandler;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.IRepository;
 import net.sourceforge.atunes.model.IRepositoryHandler;
@@ -51,6 +52,8 @@ public final class FavoritesHandler extends AbstractHandler implements
 	private IFavorites favorites = new Favorites();
 
 	private IUnknownObjectChecker unknownObjectChecker;
+
+	private IFrame frame;
 
 	/**
 	 * @param unknownObjectChecker
@@ -266,5 +269,19 @@ public final class FavoritesHandler extends AbstractHandler implements
 				}
 			}
 		}
+	}
+	
+	/**
+	 * @return the frame
+	 */
+	protected IFrame getFrame() {
+		return this.frame;
+	}
+
+	/**
+	 * @param frame
+	 */
+	public void setFrame(final IFrame frame) {
+		this.frame = frame;
 	}
 }

@@ -29,6 +29,7 @@ import java.util.StringTokenizer;
 
 import net.sourceforge.atunes.model.ILyrics;
 import net.sourceforge.atunes.model.ILyricsRetrieveOperation;
+import net.sourceforge.atunes.model.INetworkHandler;
 import net.sourceforge.atunes.utils.Logger;
 import net.sourceforge.atunes.utils.StringUtils;
 
@@ -63,6 +64,16 @@ public class LyrcEngine extends AbstractLyricsEngine {
 	 */
 	private static boolean validToken(final String t) {
 		return t.matches("[A-Za-z]+");
+	}
+
+	private INetworkHandler networkHandler;
+
+	public INetworkHandler getNetworkHandler() {
+		return networkHandler;
+	}
+
+	public void setNetworkHandler(INetworkHandler networkHandler) {
+		this.networkHandler = networkHandler;
 	}
 
 	private String getLyrics(final String url, final String artist,

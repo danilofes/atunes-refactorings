@@ -26,6 +26,7 @@ import java.util.List;
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.kernel.actions.AddLovedSongInLastFMAction;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IWebServicesHandler;
 
 /**
@@ -39,6 +40,8 @@ public class AddLovedSongBackgroundWorker extends BackgroundWorker<Void, Void> {
 	private IWebServicesHandler webServicesHandler;
 
 	private Collection<IAudioObject> audioObjects;
+
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param webServicesHandler

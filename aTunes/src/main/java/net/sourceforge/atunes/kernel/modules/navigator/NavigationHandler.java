@@ -30,6 +30,7 @@ import net.sourceforge.atunes.model.ArtistViewMode;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IFilter;
 import net.sourceforge.atunes.model.IFilterHandler;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.INavigationHandler;
 import net.sourceforge.atunes.model.INavigationTree;
 import net.sourceforge.atunes.model.INavigationView;
@@ -60,6 +61,8 @@ public final class NavigationHandler extends AbstractHandler implements
 	private IStateNavigation stateNavigation;
 
 	private ArtistViewMode artistViewMode;
+
+	private IFrame frame;
 
 	/**
 	 * @param filterHandler
@@ -354,5 +357,17 @@ public final class NavigationHandler extends AbstractHandler implements
 	@Override
 	public void setNavigationViews(final List<INavigationView> navigationViews) {
 		this.navigationViews = navigationViews;
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -28,6 +28,7 @@ import net.sourceforge.atunes.model.IAlbum;
 import net.sourceforge.atunes.model.IArtist;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IAudioObjectStatistics;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.IRepositoryHandler;
 import net.sourceforge.atunes.model.IStateService;
@@ -58,6 +59,8 @@ public final class StatisticsHandler extends AbstractHandler implements
 	private ITaskService taskService;
 
 	private IUnknownObjectChecker unknownObjectChecker;
+
+	private IFrame frame;
 
 	/**
 	 * @param unknownObjectChecker
@@ -375,5 +378,17 @@ public final class StatisticsHandler extends AbstractHandler implements
 	private void storeStatistics() {
 		new StoreStatistics(this.taskService, this.stateService, this)
 				.storeStatistics();
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

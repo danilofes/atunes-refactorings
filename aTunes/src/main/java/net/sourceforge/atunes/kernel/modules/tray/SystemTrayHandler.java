@@ -32,6 +32,7 @@ import net.sourceforge.atunes.gui.GuiUtils;
 import net.sourceforge.atunes.gui.images.Images;
 import net.sourceforge.atunes.kernel.AbstractHandler;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IPlayerTrayIconsHandler;
 import net.sourceforge.atunes.model.IStateUI;
 import net.sourceforge.atunes.model.ISystemTrayHandler;
@@ -69,6 +70,7 @@ public final class SystemTrayHandler extends AbstractHandler implements
 	private IStateUI stateUI;
 
 	private IUnknownObjectChecker unknownObjectChecker;
+	private IFrame frame;
 
 	/**
 	 * @param unknownObjectChecker
@@ -383,5 +385,17 @@ public final class SystemTrayHandler extends AbstractHandler implements
 		strBuilder.append(" ");
 		strBuilder.append(Constants.VERSION.toShortString());
 		setTrayToolTip(strBuilder.toString());
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -24,6 +24,7 @@ import java.io.File;
 import java.util.List;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IPodcastFeedEntry;
 import net.sourceforge.atunes.model.ITable;
 
@@ -39,6 +40,7 @@ public final class DeleteDownloadedPodcastFeedBackgroundWorker extends
 	private File f;
 	private IPodcastFeedEntry podcastFeedEntry;
 	private ITable navigationTable;
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param navigationTable

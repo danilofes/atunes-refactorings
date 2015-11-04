@@ -25,6 +25,7 @@ import java.util.List;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IColumn;
 import net.sourceforge.atunes.model.IListOfPlayLists;
 import net.sourceforge.atunes.model.IPlayList;
@@ -48,6 +49,7 @@ public class LoadPlayListsBackgroundWorker extends
 	private ISearchHandler searchHandler;
 
 	private IListOfPlayLists listOfPlayLists;
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param listOfPlayLists

@@ -25,6 +25,7 @@ import java.util.List;
 import net.sourceforge.atunes.Constants;
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.model.ApplicationVersion;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IMessageDialog;
@@ -52,6 +53,7 @@ public final class CheckUpdatesBackgroundWorker extends
 	private String downloadURLStart1;
 
 	private String downloadURLStart2;
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param downloadURLStart1

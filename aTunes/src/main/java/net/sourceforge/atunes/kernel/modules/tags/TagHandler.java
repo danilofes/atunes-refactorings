@@ -33,6 +33,7 @@ import net.sourceforge.atunes.model.IAlbum;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IFileManager;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.ILocalAudioObjectReader;
 import net.sourceforge.atunes.model.IProcessFactory;
@@ -71,6 +72,8 @@ public class TagHandler extends AbstractHandler implements ITagHandler {
 	private TagFactory tagFactory;
 
 	private ILocalAudioObjectReader localAudioObjectReader;
+
+	private IFrame frame;
 
 	/**
 	 * @param localAudioObjectReader
@@ -350,5 +353,17 @@ public class TagHandler extends AbstractHandler implements ITagHandler {
 	public ImageIcon getImage(final ILocalAudioObject audioObject,
 			final int width, final int height) {
 		return this.localAudioObjectReader.getImage(audioObject, width, height);
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

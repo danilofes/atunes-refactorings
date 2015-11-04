@@ -26,6 +26,7 @@ import java.util.List;
 
 import net.sourceforge.atunes.kernel.AbstractHandler;
 import net.sourceforge.atunes.model.IDialogFactory;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.INavigationHandler;
 import net.sourceforge.atunes.model.INavigationView;
 import net.sourceforge.atunes.model.IRadio;
@@ -47,6 +48,8 @@ public final class RadioHandler extends AbstractHandler implements
 	private INavigationView radioNavigationView;
 
 	private IDialogFactory dialogFactory;
+
+	private IFrame frame;
 
 	/**
 	 * @param dialogFactory
@@ -174,5 +177,17 @@ public final class RadioHandler extends AbstractHandler implements
 	 */
 	void setRadios(final List<IRadio> radios) {
 		this.radios = radios;
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -36,6 +36,7 @@ import java.util.List;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.model.IBackgroundWorkerCallback;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IIconFactory;
 import net.sourceforge.atunes.model.ILookAndFeelManager;
@@ -76,6 +77,7 @@ public class PodcastFeedEntryDownloader extends
 	private ILookAndFeelManager lookAndFeelManager;
 
 	private IProgressDialog dialog;
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param lookAndFeelManager

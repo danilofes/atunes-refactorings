@@ -28,6 +28,7 @@ import net.sourceforge.atunes.kernel.AbstractHandler;
 import net.sourceforge.atunes.model.IApplicationArguments;
 import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.ICommandHandler;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IMultipleInstancesHandler;
 import net.sourceforge.atunes.utils.ClosingUtils;
 import net.sourceforge.atunes.utils.Logger;
@@ -48,6 +49,8 @@ public final class MultipleInstancesHandler extends AbstractHandler implements
 	private ServerSocket serverSocket;
 
 	private IApplicationArguments applicationArguments;
+
+	private IFrame frame;
 
 	/**
 	 * @param applicationArguments
@@ -108,5 +111,17 @@ public final class MultipleInstancesHandler extends AbstractHandler implements
 	 */
 	boolean isClosing() {
 		return this.closing;
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

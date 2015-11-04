@@ -25,7 +25,9 @@ import java.util.List;
 import net.sourceforge.atunes.kernel.BackgroundWorkerWithIndeterminateProgress;
 import net.sourceforge.atunes.kernel.StateChangeListeners;
 import net.sourceforge.atunes.model.IConfirmationDialog;
+import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IErrorDialog;
+import net.sourceforge.atunes.model.IIndeterminateProgressDialog;
 import net.sourceforge.atunes.model.IKernel;
 import net.sourceforge.atunes.utils.I18nUtils;
 import net.sourceforge.atunes.utils.Logger;
@@ -38,6 +40,25 @@ public class ValidateAndProcessPreferencesBackgroundWorker
 
 	private EditPreferencesDialog preferencesDialog;
 
+	private IDialogFactory dialogFactory;
+
+	/**
+	 * @return dialog factory
+	 */
+	public IDialogFactory getDialogFactory() {
+		return dialogFactory;
+	}
+
+	/**
+	 * @param dialogFactory
+	 */
+	public void setDialogFactory(IDialogFactory dialogFactory) {
+		this.dialogFactory = dialogFactory;
+		super.dialog = dialogFactory
+				.newDialog(IIndeterminateProgressDialog.class);
+		this.dialog.setTitle(getDialogTitle());
+	}
+	
 	/**
 	 * Validates panels and process preferences if valid
 	 * 

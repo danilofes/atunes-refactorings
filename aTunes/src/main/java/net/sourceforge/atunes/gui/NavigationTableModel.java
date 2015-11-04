@@ -28,6 +28,7 @@ import javax.swing.event.TableModelEvent;
 
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IColumn;
+import net.sourceforge.atunes.model.IColumnSet;
 import net.sourceforge.atunes.utils.Logger;
 
 /**
@@ -39,6 +40,15 @@ public final class NavigationTableModel extends AbstractColumnSetTableModel {
 
 	/** The songs. */
 	private List<? extends IAudioObject> audioObjects;
+	private IColumnSet columnSet;
+
+	public IColumnSet getColumnSet() {
+		return columnSet;
+	}
+
+	public void setColumnSet(IColumnSet columnSet) {
+		this.columnSet = columnSet;
+	}
 
 	/**
 	 * Instantiates a new navigation table model.

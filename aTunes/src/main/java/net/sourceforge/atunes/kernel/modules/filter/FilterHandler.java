@@ -26,6 +26,7 @@ import java.util.Map;
 import net.sourceforge.atunes.kernel.AbstractHandler;
 import net.sourceforge.atunes.model.IFilter;
 import net.sourceforge.atunes.model.IFilterHandler;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.utils.Logger;
 
 /**
@@ -53,6 +54,8 @@ public final class FilterHandler extends AbstractHandler implements
 	private IFilter navigationTableFilter;
 
 	private IFilter playListFilter;
+
+	private IFrame frame;
 
 	/**
 	 * @param navigatorTableFilterPanelController
@@ -125,5 +128,17 @@ public final class FilterHandler extends AbstractHandler implements
 	@Override
 	public String getFilterText(final IFilter filter) {
 		return this.currentFilterText.get(filter);
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

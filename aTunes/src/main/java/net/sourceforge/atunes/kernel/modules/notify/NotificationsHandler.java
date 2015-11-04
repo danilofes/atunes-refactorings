@@ -29,6 +29,7 @@ import java.util.Map;
 
 import net.sourceforge.atunes.kernel.AbstractHandler;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IFullScreenHandler;
 import net.sourceforge.atunes.model.INotificationEngine;
 import net.sourceforge.atunes.model.INotificationsHandler;
@@ -51,6 +52,8 @@ public final class NotificationsHandler extends AbstractHandler implements INoti
 	private IStateUI stateUI;
 
 	private IStateCore stateCore;
+
+	private IFrame frame;
 
 	/**
 	 * @param stateCore
@@ -151,5 +154,17 @@ public final class NotificationsHandler extends AbstractHandler implements INoti
 			defaultEngine = getBean("defaultNotificationEngine", INotificationEngine.class);
 		}
 		return defaultEngine;
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

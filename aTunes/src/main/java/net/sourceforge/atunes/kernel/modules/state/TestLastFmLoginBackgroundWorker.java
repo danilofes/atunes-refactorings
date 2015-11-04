@@ -26,6 +26,7 @@ import java.util.List;
 import javax.swing.JButton;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IErrorDialog;
 import net.sourceforge.atunes.model.IMessageDialog;
@@ -52,6 +53,8 @@ public final class TestLastFmLoginBackgroundWorker extends
 	private IWebServicesHandler webServicesHandler;
 
 	private IDialogFactory dialogFactory;
+
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param webServicesHandler

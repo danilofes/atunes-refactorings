@@ -35,6 +35,7 @@ import net.sourceforge.atunes.model.IContextHandler;
 import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IFilter;
 import net.sourceforge.atunes.model.IFilterHandler;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IListMessageDialog;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.ILocalAudioObjectValidator;
@@ -98,6 +99,8 @@ public final class PlayListHandler extends AbstractHandler implements
 	private IDialogFactory dialogFactory;
 
 	private ISearchHandler searchHandler;
+
+	private IFrame frame;
 
 	/**
 	 * @param searchHandler
@@ -863,5 +866,17 @@ public final class PlayListHandler extends AbstractHandler implements
 		} else {
 			throw new IllegalArgumentException("Not a dynamic playlist");
 		}
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

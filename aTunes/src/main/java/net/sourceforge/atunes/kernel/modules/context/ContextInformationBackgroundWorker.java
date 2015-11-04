@@ -25,6 +25,7 @@ import java.util.concurrent.CancellationException;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IContextInformationSource;
 import net.sourceforge.atunes.model.IContextPanelContent;
 import net.sourceforge.atunes.utils.Logger;
@@ -54,6 +55,8 @@ public class ContextInformationBackgroundWorker extends
 	 * audio object
 	 */
 	private IAudioObject audioObject;
+
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param content

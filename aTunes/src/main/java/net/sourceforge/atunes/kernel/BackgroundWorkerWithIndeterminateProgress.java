@@ -20,6 +20,7 @@
 
 package net.sourceforge.atunes.kernel;
 
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IIndeterminateProgressDialog;
 
@@ -34,26 +35,14 @@ import net.sourceforge.atunes.model.IIndeterminateProgressDialog;
 public abstract class BackgroundWorkerWithIndeterminateProgress<T, I> extends
 		BackgroundWorker<T, I> {
 
-	private IDialogFactory dialogFactory;
+	protected IIndeterminateProgressDialog dialog;
 
-	private IIndeterminateProgressDialog dialog;
-
-	/**
-	 * @return dialog factory
-	 */
-	protected IDialogFactory getDialogFactory() {
-		return dialogFactory;
-	}
-
-	/**
-	 * @param dialogFactory
-	 */
-	public void setDialogFactory(IDialogFactory dialogFactory) {
-		this.dialogFactory = dialogFactory;
-		this.dialog = dialogFactory
-				.newDialog(IIndeterminateProgressDialog.class);
-		this.dialog.setTitle(getDialogTitle());
-	}
+	private IBeanFactory beanFactory;
+	
+	
+	public abstract IDialogFactory getDialogFactory();
+	
+	public abstract void setDialogFactory(IDialogFactory dialogFactory);
 
 	@Override
 	protected final void before() {

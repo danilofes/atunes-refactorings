@@ -34,6 +34,7 @@ import net.sourceforge.atunes.kernel.actions.RemoteAction;
 import net.sourceforge.atunes.model.IApplicationArguments;
 import net.sourceforge.atunes.model.ICommand;
 import net.sourceforge.atunes.model.ICommandHandler;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.utils.Logger;
 
 import org.springframework.context.ApplicationContext;
@@ -56,6 +57,8 @@ public final class CommandHandler extends AbstractHandler implements
 	private IApplicationArguments applicationArguments;
 
 	private ApplicationContext context;
+
+	private IFrame frame;
 
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) {
@@ -138,5 +141,17 @@ public final class CommandHandler extends AbstractHandler implements
 		} else {
 			return "Bad command name of format, type \"command:help\" for assistance.";
 		}
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

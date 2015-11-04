@@ -39,6 +39,7 @@ import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IFavoritesHandler;
 import net.sourceforge.atunes.model.IFileManager;
 import net.sourceforge.atunes.model.IFolder;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IGenre;
 import net.sourceforge.atunes.model.IIndeterminateProgressDialog;
 import net.sourceforge.atunes.model.ILocalAudioObject;
@@ -105,6 +106,8 @@ public final class RepositoryHandler extends AbstractHandler implements
 	private ITaskService taskService;
 
 	private boolean repositoryNotSelected;
+
+	private IFrame frame;
 
 	/**
 	 * @param taskService
@@ -785,5 +788,17 @@ public final class RepositoryHandler extends AbstractHandler implements
 		// Force navigation view refresh to show information about repository
 		// not selected
 		this.navigationHandler.refreshCurrentView();
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -32,14 +32,12 @@ import net.sourceforge.atunes.model.INetworkHandler;
  */
 public abstract class AbstractLyricsEngine {
 
-    private INetworkHandler networkHandler;
-
+	public abstract INetworkHandler getNetworkHandler();
+	
     /**
      * @param networkHandler
      */
-    public void setNetworkHandler(INetworkHandler networkHandler) {
-		this.networkHandler = networkHandler;
-	}
+    public abstract void setNetworkHandler(INetworkHandler networkHandler);
     
     /**
      * Encode string.
@@ -50,7 +48,7 @@ public abstract class AbstractLyricsEngine {
      * @return the string
      */
     protected final String encodeString(String str) {
-        return networkHandler.encodeString(str);
+        return getNetworkHandler().encodeString(str);
     }
 
     /**
@@ -61,7 +59,7 @@ public abstract class AbstractLyricsEngine {
      * @throws IOException
      */
     protected final URLConnection getConnection(String url, ILyricsRetrieveOperation operation) throws IOException {
-        return networkHandler.getConnection(url);
+        return getNetworkHandler().getConnection(url);
     }
 
     /**
@@ -78,7 +76,7 @@ public abstract class AbstractLyricsEngine {
      *             Signals that an I/O exception has occurred.
      */
     protected final String readURL(URLConnection connection, String charset) throws IOException {
-        return networkHandler.readURL(connection, charset);
+        return getNetworkHandler().readURL(connection, charset);
     }
 
     /**

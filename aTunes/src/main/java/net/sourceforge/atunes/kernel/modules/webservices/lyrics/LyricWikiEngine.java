@@ -28,6 +28,7 @@ import net.htmlparser.jericho.Element;
 import net.htmlparser.jericho.Source;
 import net.sourceforge.atunes.model.ILyrics;
 import net.sourceforge.atunes.model.ILyricsRetrieveOperation;
+import net.sourceforge.atunes.model.INetworkHandler;
 import net.sourceforge.atunes.utils.Logger;
 import net.sourceforge.atunes.utils.StringUtils;
 
@@ -72,6 +73,16 @@ public class LyricWikiEngine extends AbstractLyricsEngine {
 			b.append(" ");
 		}
 		return b.toString().trim().replace(" ", "_");
+	}
+
+	private INetworkHandler networkHandler;
+
+	public INetworkHandler getNetworkHandler() {
+		return networkHandler;
+	}
+
+	public void setNetworkHandler(INetworkHandler networkHandler) {
+		this.networkHandler = networkHandler;
 	}
 
 	/**

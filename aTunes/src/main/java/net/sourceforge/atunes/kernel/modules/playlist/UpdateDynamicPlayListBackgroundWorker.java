@@ -23,6 +23,8 @@ package net.sourceforge.atunes.kernel.modules.playlist;
 import java.util.List;
 
 import net.sourceforge.atunes.kernel.BackgroundWorkerWithIndeterminateProgress;
+import net.sourceforge.atunes.model.IDialogFactory;
+import net.sourceforge.atunes.model.IIndeterminateProgressDialog;
 import net.sourceforge.atunes.utils.I18nUtils;
 
 /**
@@ -38,6 +40,25 @@ public class UpdateDynamicPlayListBackgroundWorker extends
 
 	private PlayListHandler playListHandler;
 
+	private IDialogFactory dialogFactory;
+
+	/**
+	 * @return dialog factory
+	 */
+	public IDialogFactory getDialogFactory() {
+		return dialogFactory;
+	}
+
+	/**
+	 * @param dialogFactory
+	 */
+	public void setDialogFactory(IDialogFactory dialogFactory) {
+		this.dialogFactory = dialogFactory;
+		super.dialog = dialogFactory
+				.newDialog(IIndeterminateProgressDialog.class);
+		this.dialog.setTitle(getDialogTitle());
+	}
+	
 	/**
 	 * @param playListHandler
 	 */

@@ -35,6 +35,7 @@ import net.sourceforge.atunes.kernel.AbstractHandler;
 import net.sourceforge.atunes.model.IAddPodcastFeedDialog;
 import net.sourceforge.atunes.model.IBackgroundWorkerCallback;
 import net.sourceforge.atunes.model.IDialogFactory;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.INavigationHandler;
 import net.sourceforge.atunes.model.INavigationView;
 import net.sourceforge.atunes.model.IPodcastFeed;
@@ -49,7 +50,6 @@ import net.sourceforge.atunes.utils.CollectionUtils;
 import net.sourceforge.atunes.utils.FileNameUtils;
 import net.sourceforge.atunes.utils.Logger;
 import net.sourceforge.atunes.utils.StringUtils;
-
 import static net.sourceforge.atunes.utils.FileNameUtils.getValidFileName;
 import static net.sourceforge.atunes.utils.FileNameUtils.getValidFolderName;
 
@@ -85,6 +85,8 @@ public final class PodcastFeedHandler extends AbstractHandler implements
 	private IStatePodcast statePodcast;
 
 	private IDialogFactory dialogFactory;
+
+	private IFrame frame;
 
 	/**
 	 * @param dialogFactory
@@ -535,5 +537,17 @@ public final class PodcastFeedHandler extends AbstractHandler implements
 	 */
 	void setPodcastFeeds(final List<IPodcastFeed> podcastFeeds) {
 		this.podcastFeeds = podcastFeeds;
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

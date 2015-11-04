@@ -43,6 +43,7 @@ import net.sourceforge.atunes.model.IAlbumInfo;
 import net.sourceforge.atunes.model.IApplicationArguments;
 import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IErrorDialog;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IIndeterminateProgressDialog;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.ILocalAudioObjectFactory;
@@ -107,6 +108,7 @@ public final class RipperHandler extends AbstractHandler implements
 	private Genres genresHelper;
 
 	private ILocalAudioObjectFactory localAudioObjectFactory;
+	private IFrame frame;
 
 	/**
 	 * @param localAudioObjectFactory
@@ -561,5 +563,17 @@ public final class RipperHandler extends AbstractHandler implements
 	@Override
 	public boolean isRipSupported() {
 		return getOsManager().isRipSupported();
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

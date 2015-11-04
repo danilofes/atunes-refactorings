@@ -25,6 +25,7 @@ import java.util.List;
 
 import net.sourceforge.atunes.kernel.AbstractHandler;
 import net.sourceforge.atunes.model.IAudioObject;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IFullScreenHandler;
 import net.sourceforge.atunes.model.IPlayListAudioObject;
 import net.sourceforge.atunes.model.IPlayListEventListener;
@@ -46,6 +47,8 @@ public class FullScreenHandler extends AbstractHandler implements
 	private IPlayListHandler playListHandler;
 
 	private IStatePlaylist statePlaylist;
+
+	private IFrame frame;
 
 	/**
 	 * @param statePlaylist
@@ -170,5 +173,17 @@ public class FullScreenHandler extends AbstractHandler implements
 					newState == PlaybackState.RESUMING
 							|| newState == PlaybackState.PLAYING);
 		}
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

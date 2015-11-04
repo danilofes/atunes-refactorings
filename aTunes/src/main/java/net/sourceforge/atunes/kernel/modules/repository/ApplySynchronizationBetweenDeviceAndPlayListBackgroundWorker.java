@@ -27,6 +27,7 @@ import javax.swing.Action;
 import javax.swing.SwingUtilities;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.IDeviceHandler;
 import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IFileManager;
@@ -63,6 +64,8 @@ public class ApplySynchronizationBetweenDeviceAndPlayListBackgroundWorker
 	private final int filesRemoved = 0;
 
 	private Map<String, List<ILocalAudioObject>> syncData;
+
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param syncData

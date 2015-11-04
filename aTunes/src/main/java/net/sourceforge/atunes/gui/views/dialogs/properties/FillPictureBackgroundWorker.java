@@ -27,6 +27,7 @@ import javax.swing.JLabel;
 
 import net.sourceforge.atunes.Constants;
 import net.sourceforge.atunes.kernel.BackgroundWorker;
+import net.sourceforge.atunes.model.IBeanFactory;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.ILocalAudioObjectImageHandler;
 
@@ -41,6 +42,7 @@ public final class FillPictureBackgroundWorker extends
 
 	private JLabel pictureLabel;
 	private ILocalAudioObject file;
+	private IBeanFactory beanFactory;
 
 	/**
 	 * @param pictureLabel

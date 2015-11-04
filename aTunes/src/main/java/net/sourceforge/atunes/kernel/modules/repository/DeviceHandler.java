@@ -56,6 +56,7 @@ import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IErrorDialog;
 import net.sourceforge.atunes.model.IFileManager;
 import net.sourceforge.atunes.model.IFolderSelectorDialog;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.ILocalAudioObjectTransferProcess;
 import net.sourceforge.atunes.model.IMessageDialog;
@@ -147,6 +148,7 @@ public final class DeviceHandler extends AbstractHandler implements
 	private IUnknownObjectChecker unknownObjectChecker;
 
 	private IFileManager fileManager;
+	private IFrame frame;
 
 	/**
 	 * @param fileManager
@@ -914,5 +916,17 @@ public final class DeviceHandler extends AbstractHandler implements
 	@Override
 	public Map<String, ?> getDataForView(final ViewMode viewMode) {
 		return viewMode.getDataForView(this.deviceRepository);
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -23,6 +23,7 @@ package net.sourceforge.atunes.kernel.modules.playlist;
 import net.sourceforge.atunes.gui.AbstractColumnSetTableModel;
 import net.sourceforge.atunes.model.IAudioObject;
 import net.sourceforge.atunes.model.IColumn;
+import net.sourceforge.atunes.model.IColumnSet;
 import net.sourceforge.atunes.model.IPlayList;
 import net.sourceforge.atunes.model.IPlayListHandler;
 
@@ -39,6 +40,16 @@ public class PlayListTableModel extends AbstractColumnSetTableModel {
 	private IPlayList visiblePlayList = null;
 
 	private IPlayListHandler playListHandler;
+
+	private IColumnSet columnSet;
+
+	public IColumnSet getColumnSet() {
+		return columnSet;
+	}
+
+	public void setColumnSet(IColumnSet columnSet) {
+		this.columnSet = columnSet;
+	}
 
 	/**
 	 * @param playListHandler

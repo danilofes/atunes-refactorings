@@ -26,6 +26,7 @@ import java.net.URI;
 import java.util.List;
 
 import net.sourceforge.atunes.kernel.BackgroundWorker;
+import net.sourceforge.atunes.model.IBeanFactory;
 
 /**
  * Calls desktop to open a browser
@@ -37,6 +38,7 @@ public final class OpenBrowserBackgroundWorker extends
 		BackgroundWorker<Void, Void> {
 
 	private URI uri;
+	private IBeanFactory beanFactory;
 
 	public void open(final URI uri) {
 		this.uri = uri;

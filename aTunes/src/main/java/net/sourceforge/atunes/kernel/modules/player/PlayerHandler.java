@@ -74,6 +74,8 @@ public final class PlayerHandler extends AbstractHandler implements
 
 	private boolean stopAfterCurrentTrack;
 
+	private IFrame frame;
+
 	/**
 	 * @param playListHandler
 	 */
@@ -450,5 +452,17 @@ public final class PlayerHandler extends AbstractHandler implements
 
 	@Override
 	public void playListCleared() {
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }

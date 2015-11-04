@@ -35,8 +35,6 @@ import net.sourceforge.atunes.model.PlaybackState;
  */
 public abstract class AbstractHandler implements IHandler {
 
-	private IFrame frame;
-
 	private IOSManager osManager;
 
 	private IBeanFactory beanFactory;
@@ -72,16 +70,12 @@ public abstract class AbstractHandler implements IHandler {
 	/**
 	 * @return the frame
 	 */
-	protected IFrame getFrame() {
-		return this.frame;
-	}
+	protected abstract IFrame getFrame();
 
 	/**
 	 * @param frame
 	 */
-	public void setFrame(final IFrame frame) {
-		this.frame = frame;
-	}
+	public abstract void setFrame(final IFrame frame);
 
 	@Override
 	public void deferredInitialization() {

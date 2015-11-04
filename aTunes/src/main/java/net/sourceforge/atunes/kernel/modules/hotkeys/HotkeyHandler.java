@@ -25,6 +25,7 @@ import net.sourceforge.atunes.kernel.actions.MuteAction;
 import net.sourceforge.atunes.kernel.actions.PlayAction;
 import net.sourceforge.atunes.model.IDialogFactory;
 import net.sourceforge.atunes.model.IErrorDialog;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.IHotkey;
 import net.sourceforge.atunes.model.IHotkeyHandler;
 import net.sourceforge.atunes.model.IHotkeyListener;
@@ -52,6 +53,7 @@ public final class HotkeyHandler extends AbstractHandler implements
     private IStateCore stateCore;
 
     private IDialogFactory dialogFactory;
+	private IFrame frame;
 
     /**
      * @param dialogFactory
@@ -236,5 +238,17 @@ public final class HotkeyHandler extends AbstractHandler implements
 	    disableHotkeys();
 	}
     }
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

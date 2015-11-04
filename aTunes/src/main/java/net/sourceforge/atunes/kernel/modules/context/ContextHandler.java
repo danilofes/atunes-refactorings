@@ -30,6 +30,7 @@ import net.sourceforge.atunes.model.IContextHandler;
 import net.sourceforge.atunes.model.IContextPanel;
 import net.sourceforge.atunes.model.IContextPanelsContainer;
 import net.sourceforge.atunes.model.IFileManager;
+import net.sourceforge.atunes.model.IFrame;
 import net.sourceforge.atunes.model.ILocalAudioObject;
 import net.sourceforge.atunes.model.IPlayListAudioObject;
 import net.sourceforge.atunes.model.IPlayListEventListener;
@@ -78,6 +79,8 @@ public final class ContextHandler extends AbstractHandler implements
 	private IStatePlaylist statePlaylist;
 
 	private IFileManager fileManager;
+
+	private IFrame frame;
 
 	/**
 	 * @param fileManager
@@ -392,5 +395,17 @@ public final class ContextHandler extends AbstractHandler implements
 				ContextHandler.this.webServicesHandler.consolidateWebContent();
 			}
 		});
+	}
+
+	@Override
+	protected IFrame getFrame() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setFrame(IFrame frame) {
+		// TODO Auto-generated method stub
+		
 	}
 }
