@@ -199,4 +199,11 @@ public final class OSDDialog extends AbstractCustomWindow {
 		}
 		GuiUtils.setWindowShape(this, mask);
 	}
+
+	@Override
+	public JLabel getLine2() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

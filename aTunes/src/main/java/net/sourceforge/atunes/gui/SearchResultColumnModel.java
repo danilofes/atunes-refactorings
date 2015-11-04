@@ -22,6 +22,8 @@ package net.sourceforge.atunes.gui;
 
 import javax.swing.table.TableColumn;
 
+import net.sourceforge.atunes.model.IColumnSet;
+
 /**
  * Column model for search results
  * 
@@ -48,5 +50,11 @@ public class SearchResultColumnModel extends AbstractCommonColumnModel {
 	public void addColumn(final TableColumn aColumn) {
 		super.addColumn(aColumn);
 		updateColumnSettings(aColumn);
+	}
+
+	@Override
+	public IColumnSet getAlbumColumnSet() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

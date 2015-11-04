@@ -187,30 +187,6 @@ public abstract class CommonSingleFrame extends AbstractSingleFrame {
 		super.applySplitPaneDividerPosition(splitPane, l, relPos);
 	}
 
-	/**
-	 * Places split pane divider position in a vertical split pane
-	 * 
-	 * @param splitPane
-	 * @param location
-	 * @param relPos
-	 */
-	private void applyVerticalSplitPaneDividerPosition(
-			final JSplitPane splitPane, final int location, final double relPos) {
-		// Avoid bottom component to have a height less than its minimum size
-		int l = location;
-		if (splitPane.getHeight() > 0) {
-			int rightHeight = splitPane.getHeight() - l;
-			int rightMinHeight = (int) splitPane.getRightComponent()
-					.getMinimumSize().getHeight();
-			if (rightMinHeight > rightHeight) {
-				l = l
-						- (rightMinHeight - rightHeight + getControlsBuilder()
-								.getSplitPaneDividerSize());
-			}
-		}
-		super.applySplitPaneDividerPosition(splitPane, l, relPos);
-	}
-
 	@Override
 	protected Dimension getContextPanelMinimumSize() {
 		return getContext().getBean("contextMinimumSize", Dimension.class);

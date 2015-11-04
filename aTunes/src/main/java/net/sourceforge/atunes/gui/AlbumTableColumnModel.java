@@ -34,20 +34,13 @@ public final class AlbumTableColumnModel extends AbstractCommonColumnModel {
 
     private static final long serialVersionUID = 8480107980198328642L;
 
-    private IColumnSet albumColumnSet;
+    IColumnSet albumColumnSet;
 
     /**
      * @param albumColumnSet
      */
     public void setAlbumColumnSet(final IColumnSet albumColumnSet) {
 	this.albumColumnSet = albumColumnSet;
-    }
-
-    /**
-     * Initialization needed
-     */
-    public void initialize() {
-	setColumnSet(albumColumnSet);
     }
 
     @Override
@@ -59,4 +52,10 @@ public final class AlbumTableColumnModel extends AbstractCommonColumnModel {
 	super.addColumn(aColumn);
 	updateColumnSettings(aColumn);
     }
+
+	@Override
+	public IColumnSet getAlbumColumnSet() {
+		
+		return albumColumnSet;
+	}
 }

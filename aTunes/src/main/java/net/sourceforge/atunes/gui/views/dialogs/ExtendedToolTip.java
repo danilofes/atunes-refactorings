@@ -48,7 +48,7 @@ public final class ExtendedToolTip extends AbstractCustomWindow {
 	private final FadeInPanel imagePanel;
 	private final JLabel image;
 	private final JLabel line1;
-	private final JLabel line2;
+	public final JLabel line2;
 	private final JLabel line3;
 
 	/**
@@ -116,16 +116,6 @@ public final class ExtendedToolTip extends AbstractCustomWindow {
 	}
 
 	/**
-	 * Sets the text of line 2
-	 * 
-	 * @param text
-	 * 
-	 */
-	public void setLine2(final String text) {
-		this.line2.setText(text);
-	}
-
-	/**
 	 * Sets the image
 	 * 
 	 * @param img
@@ -154,4 +144,10 @@ public final class ExtendedToolTip extends AbstractCustomWindow {
 	public void setLine3(final String text) {
 		this.line3.setText(text);
 	}
+
+	@Override
+	public JLabel getLine2() {
+		return this.line2;
+	}
+
 }

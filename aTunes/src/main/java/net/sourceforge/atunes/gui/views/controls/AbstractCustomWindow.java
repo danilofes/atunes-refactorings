@@ -24,6 +24,7 @@ import java.awt.Component;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JWindow;
 
 import net.sourceforge.atunes.gui.GuiUtils;
@@ -40,6 +41,10 @@ public abstract class AbstractCustomWindow extends JWindow {
 	private static final long serialVersionUID = -8846047318549650938L;
 
 	private final IControlsBuilder controlsBuilder;
+	
+	public abstract JLabel getLine2();
+	
+	//public abstract void setLine2(JLabel line2);
 
 	/**
 	 * Creates a window with given parent (owner) and size
@@ -66,5 +71,15 @@ public abstract class AbstractCustomWindow extends JWindow {
 		Component c = super.add(comp);
 		this.controlsBuilder.applyComponentOrientation(this);
 		return c;
+	}
+
+	/**
+	 * Sets the text of line 2
+	 * 
+	 * @param text
+	 * 
+	 */
+	public void setLine2(final String text) {
+		getLine2().setText(text);
 	}
 }

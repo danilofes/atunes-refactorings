@@ -518,4 +518,11 @@ public final class FullScreenWindow extends AbstractCustomWindow {
 		return this.removeBackground;
 	}
 
+	@Override
+	public JLabel getLine2() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }

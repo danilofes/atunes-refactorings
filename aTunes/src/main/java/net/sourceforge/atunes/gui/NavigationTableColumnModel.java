@@ -23,6 +23,7 @@ package net.sourceforge.atunes.gui;
 import javax.swing.JComponent;
 import javax.swing.table.TableColumn;
 
+import net.sourceforge.atunes.model.IColumnSet;
 import net.sourceforge.atunes.model.INavigationHandler;
 import net.sourceforge.atunes.model.ITable;
 import net.sourceforge.atunes.model.ITableCellRendererCode;
@@ -84,5 +85,11 @@ public final class NavigationTableColumnModel extends AbstractCommonColumnModel 
 				.getBean(NavigationTableCellRendererCode.class);
 		navigationRenderer.setRenderer(renderer);
 		return navigationRenderer;
+	}
+
+	@Override
+	public IColumnSet getAlbumColumnSet() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

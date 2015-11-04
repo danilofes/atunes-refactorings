@@ -23,6 +23,9 @@ package net.sourceforge.atunes.gui.lookandfeel.substance;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Insets;
+import java.awt.Shape;
+import java.awt.geom.GeneralPath;
+import java.awt.geom.RoundRectangle2D;
 
 import javax.swing.AbstractButton;
 import javax.swing.border.Border;
@@ -84,5 +87,15 @@ public abstract class AbstractButtonShaper implements SubstanceButtonShaper {
 	public boolean isProportionate() {
 		return true;
 	}
+
+	@Override
+	public Shape getButtonOutline(final AbstractButton button, final Insets insets, final int w,
+			final int h, final boolean isInner) {
+			int width = w - 1;
+			int height = h - 1;
+			
+			return new GeneralPath(new RoundRectangle2D.Double(0, 0, width, height,
+				10, 10));
+			}
 
 }

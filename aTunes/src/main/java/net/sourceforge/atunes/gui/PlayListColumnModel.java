@@ -103,4 +103,10 @@ public final class PlayListColumnModel extends AbstractCommonColumnModel {
 				.setRenderer((ITableCellRendererCode<JComponent, Object>) renderer);
 		return playListTableRenderer;
 	}
+
+	@Override
+	public IColumnSet getAlbumColumnSet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

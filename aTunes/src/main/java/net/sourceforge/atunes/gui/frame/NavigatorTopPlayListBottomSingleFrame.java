@@ -119,12 +119,6 @@ public final class NavigatorTopPlayListBottomSingleFrame extends
 	}
 
 	@Override
-	protected Dimension getNavigationTablePanelMaximumSize() {
-		return getContext().getBean("navigationTableMaximumSize",
-				Dimension.class);
-	}
-
-	@Override
 	protected Dimension getNavigationTreePanelMinimumSize() {
 		return getContext().getBean("navigationMinimumSize", Dimension.class);
 	}

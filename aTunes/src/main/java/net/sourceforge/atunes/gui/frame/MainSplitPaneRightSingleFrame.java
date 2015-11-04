@@ -20,6 +20,8 @@
 
 package net.sourceforge.atunes.gui.frame;
 
+import java.awt.Dimension;
+
 import javax.swing.JComponent;
 import javax.swing.JSplitPane;
 
@@ -59,6 +61,12 @@ public abstract class MainSplitPaneRightSingleFrame extends CommonSingleFrame {
 	@Override
 	protected JSplitPane getMainSplitPane() {
 		return getRightSplitPane();
+	}
+
+	@Override
+	protected Dimension getNavigationTablePanelMaximumSize() {
+		return getContext().getBean("navigationTableMaximumSize",
+				Dimension.class);
 	}
 	
 }

@@ -766,4 +766,28 @@ abstract class AbstractSingleFrame extends AbstractCustomFrame implements
 			}
 		});
 	}
+
+	/**
+	 * Places split pane divider position in a vertical split pane
+	 * 
+	 * @param splitPane
+	 * @param location
+	 * @param relPos
+	 */
+	protected void applyVerticalSplitPaneDividerPosition(final JSplitPane splitPane,
+			final int location, final double relPos) {
+				// Avoid bottom component to have a height less than its minimum size
+				int l = location;
+				if (splitPane.getHeight() > 0) {
+					int rightHeight = splitPane.getHeight() - l;
+					int rightMinHeight = (int) splitPane.getRightComponent()
+							.getMinimumSize().getHeight();
+					if (rightMinHeight > rightHeight) {
+						l = l
+								- (rightMinHeight - rightHeight + getControlsBuilder()
+										.getSplitPaneDividerSize());
+					}
+				}
+				this.applySplitPaneDividerPosition(splitPane, l, relPos);
+			}
 }

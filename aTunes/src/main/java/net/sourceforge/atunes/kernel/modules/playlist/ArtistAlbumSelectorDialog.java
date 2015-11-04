@@ -30,6 +30,7 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 
+import net.sourceforge.atunes.gui.AbstractCommonColumnModel;
 import net.sourceforge.atunes.gui.AlbumTableColumnModel;
 import net.sourceforge.atunes.gui.AlbumTableModel;
 import net.sourceforge.atunes.gui.ColumnRenderers;
@@ -116,7 +117,7 @@ public final class ArtistAlbumSelectorDialog extends AbstractCustomDialog
 		albumTable.setModel(model);
 
 		// Set column model
-		AlbumTableColumnModel columnModel = this.beanFactory
+		AbstractCommonColumnModel columnModel = this.beanFactory
 				.getBean(AlbumTableColumnModel.class);
 		columnModel.setTable(albumTable);
 		columnModel.enableColumnChange(true);

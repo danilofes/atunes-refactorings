@@ -71,6 +71,10 @@ public abstract class AbstractCommonColumnModel extends DefaultTableColumnModel
 		return this.beanFactory;
 	}
 
+	public abstract IColumnSet getAlbumColumnSet();
+	
+	//public abstract void setAlbumColumnSet(IColumnSet albumColumnSet);
+	
 	/**
 	 * @param beanFactory
 	 */
@@ -370,6 +374,13 @@ public abstract class AbstractCommonColumnModel extends DefaultTableColumnModel
 	 */
 	protected int getColumnMovedTo() {
 		return columnMovedTo;
+	}
+
+	/**
+	 * Initialization needed
+	 */
+	public void initialize() {
+	setColumnSet(getAlbumColumnSet());
 	}
 
 }
